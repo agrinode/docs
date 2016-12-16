@@ -2,12 +2,12 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Welcome to Agrinode Project\n\n\nHomepage: \nhttps://agrinode.github.iot\n\n\nBuilding Wireless Sensor Network for Agriculture Applications\n\n\nWe are participant in \nOpenIoTChallenge 3.0\n\n\n\n\nAny comments, suggestions are welcome.\n\n\nFeel free to share your ideas in our blog: \nAgrinode Blogspot", 
+            "text": "Welcome to Agrinode Project\n\n\nHomepage: \nhttps://agrinode.github.io\n\n\nBuilding Wireless Sensor Network for Agriculture Applications\n\n\nWe are participant in \nOpenIoTChallenge 3.0\n\n\n\n\nAny comments, suggestions are welcome.\n\n\nFeel free to share your ideas in our blog: \nAgrinode Blogspot", 
             "title": "Home"
         }, 
         {
             "location": "/#welcome-to-agrinode-project", 
-            "text": "Homepage:  https://agrinode.github.iot", 
+            "text": "Homepage:  https://agrinode.github.io", 
             "title": "Welcome to Agrinode Project"
         }, 
         {

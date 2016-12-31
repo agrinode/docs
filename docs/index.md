@@ -1,17 +1,14 @@
-# Welcome to MkDocs
+# Welcome to Agrinode Project
 
-For full documentation visit [mkdocs.org](http://mkdocs.org).
+Homepage: [https://agrinode.github.io](https://agrinode.github.io)
 
-## Commands
+## Building Wireless Sensor Network for Agriculture Applications
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
+### We are participant in [OpenIoTChallenge 3.0](https://iot.eclipse.org/open-iot-challenge/)
 
-## Project layout
+![](https://iot.eclipse.org/open-iot-challenge/images/header-logo.png)
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+
+Any comments, suggestions are welcome.
+
+Feel free to share your ideas in our blog: [Agrinode Blogspot](https://agrinode.blogspot.com/)

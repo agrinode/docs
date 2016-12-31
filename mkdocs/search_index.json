@@ -19,6 +19,16 @@
             "location": "/#we-are-participant-in-openiotchallenge-30", 
             "text": "Any comments, suggestions are welcome.  Feel free to share your ideas in our blog:  Agrinode Blogspot", 
             "title": "We are participant in OpenIoTChallenge 3.0"
+        }, 
+        {
+            "location": "/system_architech/", 
+            "text": "System Architecture for AgriNode project.", 
+            "title": "System architech"
+        }, 
+        {
+            "location": "/system_architech/#system-architecture-for-agrinode-project", 
+            "text": "", 
+            "title": "System Architecture for AgriNode project."
         }
     ]
 }

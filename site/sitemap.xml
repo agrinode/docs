@@ -3,8 +3,24 @@
 
     
     <url>
+     <loc>None/</loc>
+     <lastmod>2017-01-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
      <loc>None/system_architech/</loc>
-     <lastmod>2016-12-31</lastmod>
+     <lastmod>2017-01-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/mqtt_demo/</loc>
+     <lastmod>2017-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     

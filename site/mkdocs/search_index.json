@@ -1,6 +1,26 @@
 {
     "docs": [
         {
+            "location": "/", 
+            "text": "Welcome to Agrinode Project\n\n\nHomepage: \nhttps://agrinode.github.io\n\n\nBuilding Wireless Sensor Network for Agriculture Applications\n\n\nWe are participant in \nOpenIoTChallenge 3.0\n\n\n\n\nAny comments, suggestions are welcome.\n\n\nFeel free to share your ideas in our blog: \nAgrinode Blogspot", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#welcome-to-agrinode-project", 
+            "text": "Homepage:  https://agrinode.github.io", 
+            "title": "Welcome to Agrinode Project"
+        }, 
+        {
+            "location": "/#building-wireless-sensor-network-for-agriculture-applications", 
+            "text": "", 
+            "title": "Building Wireless Sensor Network for Agriculture Applications"
+        }, 
+        {
+            "location": "/#we-are-participant-in-openiotchallenge-30", 
+            "text": "Any comments, suggestions are welcome.  Feel free to share your ideas in our blog:  Agrinode Blogspot", 
+            "title": "We are participant in OpenIoTChallenge 3.0"
+        }, 
+        {
             "location": "/system_architech/", 
             "text": "System Architecture for AgriNode project.", 
             "title": "System Architecture"
@@ -9,6 +29,51 @@
             "location": "/system_architech/#system-architecture-for-agrinode-project", 
             "text": "", 
             "title": "System Architecture for AgriNode project."
+        }, 
+        {
+            "location": "/mqtt_demo/", 
+            "text": "Mosquitto\n(MQTT broker) Demo\n\n\nMQTT stands for Message Queuing Telemetry Transport which is an ISO standard (ISO/IEC PRF 20922) publish-subscribe-based \"lightweight\" messaging protocol for use on top of the TCP/IP protocol. It is designed for connections to remote locations where a \"small code footprint\" is required or the network bandwidth is limited. The publish-subscribe messaging pattern requires a message broker. The broker is responsible for distributing messages to interested clients based on the topic of a message. Andy Stanford-Clark and Arlen Nipper of Cirrus Link Solutions authored the first version of the protocol in 1999 \n[1]\n. \n\n\nIn this demo, I work on Mosquitto platform (An Open source MQTT v3.1/v3.1.1 Broker)\n\n\nThe picture shows the basic MQTT protocol. MQTT broker - Mosquitto is installed into a Gateway - \nKura based\n (Hardware: Raspberry Pi 2; OS: Raspbian). The clients - Publisher/Subscriber connect to MQTT broker via WiFi which is established by the PC. The Subscriber is an Arduino board with WiFi module that subscribes a Topic (for example \"Node01\") to receive a message. The Publisher is a smartphone running MQTT client software that will publish a message to a topic (for example \"Node01\").\n\n\n\n\nRequirements\n\n\n\n\nHardwares: Raspberry Pi 2 (WiFi dongle); Arduino with WiFi module (Adafruit Huzzah Esp8266); Smartphone (Android, IOS)\n\n\n\n\n* Step 1: Setup Kura into Raspberry Pi\n\n\nFollow this link for installing Kura into Raspberry Pi: \nhttp://eclipse.github.io/kura/doc/raspberry-pi-quick-start.html\n\n\nWe setup the Raspbery Pi in the Access Point mode for providing WiFi connection:\n\n\n\n\n* Step 2: Install Mosquitto broker into Raspberry Pi\n\n\nWe use Mosquitto platform as a MQTT broker running on Rapsberry Pi. It provides MQTT protocol for our sensor network system. For more information about MQTT protocol; please visit this page: \nwhat is MQTT and how does it work\n\n\nTo install Mosquitto, follow these steps:\n\n\nwget http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key\n\n\nsudo apt-key add mosquitto-repo.gpg.key\n\n\nThen make the repository available to apt:\n\n\ncd /etc/apt/sources.list.d/\n\n\nThen one of the following, depending on which version of debian you are using:\n\n\nsudo wget http://repo.mosquitto.org/debian/mosquitto-wheezy.list\nsudo wget http://repo.mosquitto.org/debian/mosquitto-jessie.list\n\n\nThen update apt information:\n\n\napt-get update\n\n\nAnd discover what mosquitto packages are available:\n\n\napt-cache search mosquitto\n\n\nOr just install:\n\n\napt-get install mosquitto\n\n\nFor more information, please follow this link: \nhttp://mosquitto.org/2013/01/mosquitto-debian-repository/\n\n\n* Step 3: Install MQTT demo code for Arduino\n\n\nThere are many MQTT libraries for Arduino platform. For this demo, I use MQTT library created by Joel Gahwiler \n(available in Github)\n\n\nIt is installed into Ardafruit Huzzah Esp8266 board.\n\n\nIn the sketch, we need to define these parameters:\n\n\n\"firstly, we need to connect Arduino Huzzah to the Gateway via WiFi connection which is established by the Gateway\"\n\n\nssid = \"YOUR_WIFI_NAME\"\n   //WiFi connection established from the Gateway\n\n\npass = \"YOUR_WIFI_PASSWORD\"\n \n\n\nThen replace \n\"broker.shiftr.io\"\n by \n172.16.1.1\n for MQTT broker\n\n\nFinally, define subscribe topic \nclient.subscribe(\"node01\");\n for receiving message payload from the publisher.\n\n\n* Step 4: Install MQTT client software for Android phone\n\n\nThere are many softwares available for MQTT protocol testing. I use \nMyMQTT\n for my Android phone.\n\n\n\n\nFor \"Setting\": we need MQTT broker host (it is the Gateway IP: \n172.16.1.1:1883\n) and \"Topic\" for publishing message (it is: \nNode01\n).\n\n\nFor publishing a message: navigate to \"Publish\" button -\n then fill in the Topic (\nNode01\n) and message.\n\n\nRefferences\n\n\n[1] \nhttps://en.wikipedia.org/wiki/MQTT", 
+            "title": "MQTT demo"
+        }, 
+        {
+            "location": "/mqtt_demo/#mosquittomqtt-broker-demo", 
+            "text": "MQTT stands for Message Queuing Telemetry Transport which is an ISO standard (ISO/IEC PRF 20922) publish-subscribe-based \"lightweight\" messaging protocol for use on top of the TCP/IP protocol. It is designed for connections to remote locations where a \"small code footprint\" is required or the network bandwidth is limited. The publish-subscribe messaging pattern requires a message broker. The broker is responsible for distributing messages to interested clients based on the topic of a message. Andy Stanford-Clark and Arlen Nipper of Cirrus Link Solutions authored the first version of the protocol in 1999  [1] .", 
+            "title": "Mosquitto&nbsp;"
+        }, 
+        {
+            "location": "/mqtt_demo/#in-this-demo-i-work-on-mosquitto-platform-an-open-source-mqtt-v31v311-broker", 
+            "text": "The picture shows the basic MQTT protocol. MQTT broker - Mosquitto is installed into a Gateway -  Kura based  (Hardware: Raspberry Pi 2; OS: Raspbian). The clients - Publisher/Subscriber connect to MQTT broker via WiFi which is established by the PC. The Subscriber is an Arduino board with WiFi module that subscribes a Topic (for example \"Node01\") to receive a message. The Publisher is a smartphone running MQTT client software that will publish a message to a topic (for example \"Node01\").", 
+            "title": "In this demo, I work on Mosquitto platform (An Open source MQTT v3.1/v3.1.1 Broker)"
+        }, 
+        {
+            "location": "/mqtt_demo/#requirements", 
+            "text": "Hardwares: Raspberry Pi 2 (WiFi dongle); Arduino with WiFi module (Adafruit Huzzah Esp8266); Smartphone (Android, IOS)", 
+            "title": "Requirements"
+        }, 
+        {
+            "location": "/mqtt_demo/#step-1-setup-kura-into-raspberry-pi", 
+            "text": "Follow this link for installing Kura into Raspberry Pi:  http://eclipse.github.io/kura/doc/raspberry-pi-quick-start.html  We setup the Raspbery Pi in the Access Point mode for providing WiFi connection:", 
+            "title": "* Step 1: Setup Kura into Raspberry Pi"
+        }, 
+        {
+            "location": "/mqtt_demo/#step-2-install-mosquitto-broker-into-raspberry-pi", 
+            "text": "We use Mosquitto platform as a MQTT broker running on Rapsberry Pi. It provides MQTT protocol for our sensor network system. For more information about MQTT protocol; please visit this page:  what is MQTT and how does it work  To install Mosquitto, follow these steps:  wget http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key  sudo apt-key add mosquitto-repo.gpg.key  Then make the repository available to apt:  cd /etc/apt/sources.list.d/  Then one of the following, depending on which version of debian you are using:  sudo wget http://repo.mosquitto.org/debian/mosquitto-wheezy.list\nsudo wget http://repo.mosquitto.org/debian/mosquitto-jessie.list  Then update apt information:  apt-get update  And discover what mosquitto packages are available:  apt-cache search mosquitto  Or just install:  apt-get install mosquitto  For more information, please follow this link:  http://mosquitto.org/2013/01/mosquitto-debian-repository/", 
+            "title": "* Step 2: Install Mosquitto broker into Raspberry Pi"
+        }, 
+        {
+            "location": "/mqtt_demo/#step-3-install-mqtt-demo-code-for-arduino", 
+            "text": "There are many MQTT libraries for Arduino platform. For this demo, I use MQTT library created by Joel Gahwiler  (available in Github)  It is installed into Ardafruit Huzzah Esp8266 board.  In the sketch, we need to define these parameters:  \"firstly, we need to connect Arduino Huzzah to the Gateway via WiFi connection which is established by the Gateway\"  ssid = \"YOUR_WIFI_NAME\"    //WiFi connection established from the Gateway  pass = \"YOUR_WIFI_PASSWORD\"    Then replace  \"broker.shiftr.io\"  by  172.16.1.1  for MQTT broker  Finally, define subscribe topic  client.subscribe(\"node01\");  for receiving message payload from the publisher.", 
+            "title": "* Step 3: Install MQTT demo code for Arduino"
+        }, 
+        {
+            "location": "/mqtt_demo/#step-4-install-mqtt-client-software-for-android-phone", 
+            "text": "There are many softwares available for MQTT protocol testing. I use  MyMQTT  for my Android phone.   For \"Setting\": we need MQTT broker host (it is the Gateway IP:  172.16.1.1:1883 ) and \"Topic\" for publishing message (it is:  Node01 ).  For publishing a message: navigate to \"Publish\" button -  then fill in the Topic ( Node01 ) and message.", 
+            "title": "* Step 4: Install MQTT client software for Android phone"
+        }, 
+        {
+            "location": "/mqtt_demo/#refferences", 
+            "text": "[1]  https://en.wikipedia.org/wiki/MQTT", 
+            "title": "Refferences"
         }
     ]
 }

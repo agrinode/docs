@@ -1,24 +1,14 @@
 {
     "docs": [
         {
-            "location": "/", 
-            "text": "Welcome to Agrinode Project\n\n\nHomepage: \nhttps://agrinode.github.io\n\n\nBuilding Wireless Sensor Network for Agriculture Applications\n\n\nWe are participant in \nOpenIoTChallenge 3.0\n\n\n\n\nAny comments, suggestions are welcome.\n\n\nFeel free to share your ideas in our blog: \nAgrinode Blogspot", 
-            "title": "Home"
+            "location": "/system_architech/", 
+            "text": "System Architecture for AgriNode project.", 
+            "title": "System Architecture"
         }, 
         {
-            "location": "/#welcome-to-agrinode-project", 
-            "text": "Homepage:  https://agrinode.github.io", 
-            "title": "Welcome to Agrinode Project"
-        }, 
-        {
-            "location": "/#building-wireless-sensor-network-for-agriculture-applications", 
+            "location": "/system_architech/#system-architecture-for-agrinode-project", 
             "text": "", 
-            "title": "Building Wireless Sensor Network for Agriculture Applications"
-        }, 
-        {
-            "location": "/#we-are-participant-in-openiotchallenge-30", 
-            "text": "Any comments, suggestions are welcome.  Feel free to share your ideas in our blog:  Agrinode Blogspot", 
-            "title": "We are participant in OpenIoTChallenge 3.0"
+            "title": "System Architecture for AgriNode project."
         }
     ]
 }

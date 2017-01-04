@@ -1,1 +1,7 @@
-site_name: My Docs
+site_name: AgriNode Project
+pages:
+- Home: index.md
+- System Architecture: system_architech.md
+- MQTT demo: mqtt_demo.md
+
+theme: readthedocs

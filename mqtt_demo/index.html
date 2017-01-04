@@ -184,57 +184,57 @@ sudo wget http://repo.mosquitto.org/debian/mosquitto-jessie.list</code></p>
 <p>Then replace <code>"broker.shiftr.io"</code> by <code>172.16.1.1</code> for MQTT broker</p>
 <p>Finally, define subscribe topic <code>client.subscribe("node01");</code> for receiving message payload from the publisher.</p>
 <h3 id="full-code-here">Full code here:</h3>
-<p><code>#include &lt;ESP8266WiFi.h&gt;</code>
-<code>#include &lt;MQTTClient.h&gt;</code></p>
-<p><code>const char *ssid = "agrinode";</code>
-<code>const char *pass = "12345678";</code></p>
-<p><code>WiFiClient net;</code>
-<code>MQTTClient client;</code></p>
+<p><code>#include &lt;ESP8266WiFi.h&gt;</code></p>
+<p><code>#include &lt;MQTTClient.h&gt;</code></p>
+<p><code>const char *ssid = "agrinode";</code></p>
+<p><code>const char *pass = "12345678";</code></p>
+<p><code>WiFiClient net;</code></p>
+<p><code>MQTTClient client;</code></p>
 <p><code>unsigned long lastMillis = 0;</code></p>
 <p><code>void connect(); // &lt;- predefine connect() for setup()</code></p>
-<p><code>void setup() {</code>
-  <code>Serial.begin(9600);</code>
-  <code>WiFi.begin(ssid, pass);</code>
-  <code>client.begin("172.16.1.1", net);</code>
-  <code>pinMode(0,OUTPUT);</code>
-  <code>connect();</code>
-<code>}</code></p>
-<p><code>void connect() {</code>
- <code>Serial.print("checking wifi...");</code>
-<code>while (WiFi.status() != WL_CONNECTED) {</code>
- <code>Serial.print(".");</code>
-  <code>delay(1000);</code>
- <code>}</code></p>
-<p><code>Serial.print("\nconnecting...");</code>
-  <code>while (!client.connect("arduino", "try", "try")) {</code>
-  <code>Serial.print(".");</code>
-   <code>delay(1000);</code>
- <code>}</code></p>
+<p><code>void setup() {</code></p>
+<p><code>Serial.begin(9600);</code></p>
+<p><code>WiFi.begin(ssid, pass);</code></p>
+<p><code>client.begin("172.16.1.1", net);</code></p>
+<p><code>pinMode(0,OUTPUT);</code></p>
+<p><code>connect();</code></p>
+<p><code>}</code></p>
+<p><code>void connect() {</code></p>
+<p><code>Serial.print("checking wifi...");</code></p>
+<p><code>while (WiFi.status() != WL_CONNECTED) {</code></p>
+<p><code>Serial.print(".");</code></p>
+<p><code>delay(1000);</code></p>
+<p><code>}</code></p>
+<p><code>Serial.print("\nconnecting...");</code></p>
+<p><code>while (!client.connect("arduino", "try", "try")) {</code></p>
+<p><code>Serial.print(".");</code></p>
+<p><code>delay(1000);</code></p>
+<p><code>}</code></p>
 <p><code>Serial.println("\nconnected!");</code></p>
-<p><code>client.subscribe("node01");</code>
-  <code>// client.unsubscribe("/example");</code>
-<code>}</code></p>
-<p><code>void loop() {</code>
- <code>client.loop();</code>
-  <code>delay(10); // &lt;- fixes some issues with WiFi stability</code></p>
-<p><code>if(!client.connected()) {</code>
- <code>connect();</code>
- <code>}</code></p>
-<p><code>// publish a message roughly every second.</code>
- <code>if(millis() - lastMillis &gt; 1000) {</code>
- <code>lastMillis = millis();</code>
- <code>client.publish("/hello", "world");</code>
-  <code>}</code>
-<code>}</code></p>
-<p><code>void messageReceived(String topic, String payload, char * bytes, unsigned int length) {</code>
-<code>Serial.print("incoming: ");</code>
-<code>Serial.print(topic);</code>
-<code>Serial.print(" - ");</code>
- <code>Serial.print(payload);</code>
- <code>Serial.println();</code>
- <code>if (payload=="a"){digitalWrite(0,HIGH);}</code>
-  <code>else digitalWrite(0,LOW);</code>
-<code>}</code></p>
+<p><code>client.subscribe("node01");</code></p>
+<p><code>// client.unsubscribe("/example");</code></p>
+<p><code>}</code></p>
+<p><code>void loop() {</code></p>
+<p><code>client.loop();</code></p>
+<p><code>delay(10); // &lt;- fixes some issues with WiFi stability</code></p>
+<p><code>if(!client.connected()) {</code></p>
+<p><code>connect();</code></p>
+<p><code>}</code></p>
+<p><code>// publish a message roughly every second.</code></p>
+<p><code>if(millis() - lastMillis &gt; 1000) {</code></p>
+<p><code>lastMillis = millis();</code></p>
+<p><code>client.publish("/hello", "world");</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>void messageReceived(String topic, String payload, char * bytes, unsigned int length) {</code></p>
+<p><code>Serial.print("incoming: ");</code></p>
+<p><code>Serial.print(topic);</code></p>
+<p><code>Serial.print(" - ");</code></p>
+<p><code>Serial.print(payload);</code></p>
+<p><code>Serial.println();</code></p>
+<p><code>if (payload=="a"){digitalWrite(0,HIGH);}</code></p>
+<p><code>else digitalWrite(0,LOW);</code></p>
+<p><code>}</code></p>
 <h2 id="step-4-install-mqtt-client-software-for-android-phone">* Step 4: Install MQTT client software for Android phone</h2>
 <p>There are many softwares available for MQTT protocol testing. I use <a href="https://play.google.com/store/apps/details?id=at.tripwire.mqtt.client">MyMQTT</a> for my Android phone.</p>
 <p><img alt="" src="https://lh5.ggpht.com/R7Z4Cr_Mze_EEzR0bZKg40aUqowmynAAcFxEUOnajwvg4Y4005lL1NOrW4UrPAXrFmI=h900-rw" /></p>

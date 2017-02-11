@@ -87,70 +87,109 @@ Finally, define subscribe topic `client.subscribe("node01");` for receiving mess
 
 ### Full code here:
 
-`#include <ESP8266WiFi.h>`
-`#include <MQTTClient.h>`
+~~~~
+#include <ESP8266WiFi.h>
 
-`const char *ssid = "agrinode";`
-`const char *pass = "12345678";`
+#include <MQTTClient.h>
 
-`WiFiClient net;`
-`MQTTClient client;`
+const char *ssid = "agrinode";
 
-`unsigned long lastMillis = 0;`
+const char *pass = "12345678";
 
-`void connect(); // <- predefine connect() for setup()`
+WiFiClient net;
 
-`void setup() {`
-  `Serial.begin(9600);`
-  `WiFi.begin(ssid, pass);`
-  `client.begin("172.16.1.1", net);`
-  `pinMode(0,OUTPUT);`
-  `connect();`
-`}`
+MQTTClient client;
 
-`void connect() {`
- ` Serial.print("checking wifi...");`
+unsigned long lastMillis = 0;
+
+void connect(); // <- predefine connect() for setup()
+
+void setup() {
+
+  Serial.begin(9600);
+
+  WiFi.begin(ssid, pass);
+
+  client.begin("172.16.1.1", net);
+
+  pinMode(0,OUTPUT);
+
+  connect();
+
+}
+
+void connect() {
+
+ ` Serial.print("checking wifi...");
+
 ` while (WiFi.status() != WL_CONNECTED) {`
+
  `   Serial.print(".");`
+
   `  delay(1000);`
+
  ` }`
 
  ` Serial.print("\nconnecting...");`
+
   `while (!client.connect("arduino", "try", "try")) {`
+
   `  Serial.print(".");`
+
    ` delay(1000);`
+
  ` }`
 
   `Serial.println("\nconnected!");`
 
  ` client.subscribe("node01");`
+
   `// client.unsubscribe("/example");`
-`}`
 
-`void loop() {`
- ` client.loop();`
-  `delay(10); // <- fixes some issues with WiFi stability`
+}
 
- ` if(!client.connected()) {`
- `   connect();`
- ` }`
+void loop() {
 
- ` // publish a message roughly every second.`
- ` if(millis() - lastMillis > 1000) {`
- `  lastMillis = millis();`
- `   client.publish("/hello", "world");`
-  `}`
-`}`
+  client.loop();
 
-`void messageReceived(String topic, String payload, char * bytes, unsigned int length) {`
-`  Serial.print("incoming: ");`
-`  Serial.print(topic);`
-`  Serial.print(" - ");`
- ` Serial.print(payload);`
- ` Serial.println();`
- ` if (payload=="a"){digitalWrite(0,HIGH);}`
-  `else digitalWrite(0,LOW);`
-`}`
+  delay(10); // <- fixes some issues with WiFi stability
+
+  if(!client.connected()) {
+
+    connect();
+
+  }
+
+  // publish a message roughly every second.
+
+  if(millis() - lastMillis > 1000) {
+
+   lastMillis = millis();
+
+    client.publish("/hello", "world");
+
+  }
+
+}
+
+void messageReceived(String topic, String payload, char * bytes, unsigned int length) {
+
+  Serial.print("incoming: ");
+
+  Serial.print(topic);
+
+  Serial.print(" - ");
+
+  Serial.print(payload);
+
+  Serial.println();
+
+  if (payload=="a"){digitalWrite(0,HIGH);}
+
+  else digitalWrite(0,LOW);
+  
+}
+~~~~
 
 ## * Step 4: Install MQTT client software for Android phone
 
@@ -164,6 +203,7 @@ For publishing a message: navigate to "Publish" button -> then fill in the Topic
 
 ## * Demo Video
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Gx46pzjmSqM" frameborder="0" allowfullscreen></iframe>
 
 ## Refferences
 

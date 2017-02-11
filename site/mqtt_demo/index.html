@@ -90,8 +90,13 @@
             
                 <li class="toctree-l3"><a href="#step-3-install-mqtt-demo-code-for-arduino">* Step 3: Install MQTT demo code for Arduino</a></li>
                 
+                    <li><a class="toctree-l4" href="#full-code-here">Full code here:</a></li>
+                
             
                 <li class="toctree-l3"><a href="#step-4-install-mqtt-client-software-for-android-phone">* Step 4: Install MQTT client software for Android phone</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#demo-video">* Demo Video</a></li>
                 
             
                 <li class="toctree-l3"><a href="#refferences">Refferences</a></li>
@@ -145,9 +150,11 @@
 <li>Hardwares: Raspberry Pi 2 (WiFi dongle); Arduino with WiFi module (Adafruit Huzzah Esp8266); Smartphone (Android, IOS)</li>
 </ul>
 <h2 id="step-1-setup-kura-into-raspberry-pi">* Step 1: Setup Kura into Raspberry Pi</h2>
+<p>The picture shows the Gateway hardware which consists of Raspberry Pi and WiFi dongle.</p>
+<p><img alt="" src="https://files.slack.com/files-pri/T3DCSETTK-F3M8CT37U/img_20170104_224654.jpg?pub_secret=f7bf6651fb" /></p>
 <p>Follow this link for installing Kura into Raspberry Pi: <a href="http://eclipse.github.io/kura/doc/raspberry-pi-quick-start.html">http://eclipse.github.io/kura/doc/raspberry-pi-quick-start.html</a></p>
 <p>We setup the Raspbery Pi in the Access Point mode for providing WiFi connection:</p>
-<p><img alt="" src="https://files.slack.com/files-pri/T3DCSETTK-F3M86RU82/img_20170104_224654.jpg?pub_secret=d1b0bf5603" /></p>
+<p><img alt="" src="https://files.slack.com/files-pri/T3DCSETTK-F3MUBSZML/untitled.png?pub_secret=a5706e31ba" /></p>
 <h2 id="step-2-install-mosquitto-broker-into-raspberry-pi">* Step 2: Install Mosquitto broker into Raspberry Pi</h2>
 <p>We use Mosquitto platform as a MQTT broker running on Rapsberry Pi. It provides MQTT protocol for our sensor network system. For more information about MQTT protocol; please visit this page: <a href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/aimsupport/entry/what_is_mqtt_and_how_does_it_work_with_websphere_mq?lang=en">what is MQTT and how does it work</a></p>
 <p>To install Mosquitto, follow these steps:</p>
@@ -166,6 +173,8 @@ sudo wget http://repo.mosquitto.org/debian/mosquitto-jessie.list</code></p>
 <p><code>apt-get install mosquitto</code></p>
 <p>For more information, please follow this link: <a href="http://mosquitto.org/2013/01/mosquitto-debian-repository/">http://mosquitto.org/2013/01/mosquitto-debian-repository/</a></p>
 <h2 id="step-3-install-mqtt-demo-code-for-arduino">* Step 3: Install MQTT demo code for Arduino</h2>
+<p>The Huzzah esp8266 board will receive the message from the phone in order to control a LED (connected to pin #0). The LED will be turned off if Huzzah receives message "a" and turn on with others messages.</p>
+<p><img alt="" src="https://files.slack.com/files-pri/T3DCSETTK-F3MB79KL4/img_20170104_233613.jpg?pub_secret=a967d9fcc5" /></p>
 <p>There are many MQTT libraries for Arduino platform. For this demo, I use MQTT library created by Joel Gahwiler <a href="https://github.com/256dpi/arduino-mqtt">(available in Github)</a></p>
 <p>It is installed into Ardafruit Huzzah Esp8266 board.</p>
 <p>In the sketch, we need to define these parameters:</p>
@@ -174,11 +183,66 @@ sudo wget http://repo.mosquitto.org/debian/mosquitto-jessie.list</code></p>
 <p><code>pass = "YOUR_WIFI_PASSWORD"</code> </p>
 <p>Then replace <code>"broker.shiftr.io"</code> by <code>172.16.1.1</code> for MQTT broker</p>
 <p>Finally, define subscribe topic <code>client.subscribe("node01");</code> for receiving message payload from the publisher.</p>
+<h3 id="full-code-here">Full code here:</h3>
+<p><code>#include &lt;ESP8266WiFi.h&gt;</code></p>
+<p><code>#include &lt;MQTTClient.h&gt;</code></p>
+<p><code>const char *ssid = "agrinode";</code></p>
+<p><code>const char *pass = "12345678";</code></p>
+<p><code>WiFiClient net;</code></p>
+<p><code>MQTTClient client;</code></p>
+<p><code>unsigned long lastMillis = 0;</code></p>
+<p><code>void connect(); // &lt;- predefine connect() for setup()</code></p>
+<p><code>void setup() {</code></p>
+<p><code>Serial.begin(9600);</code></p>
+<p><code>WiFi.begin(ssid, pass);</code></p>
+<p><code>client.begin("172.16.1.1", net);</code></p>
+<p><code>pinMode(0,OUTPUT);</code></p>
+<p><code>connect();</code></p>
+<p><code>}</code></p>
+<p><code>void connect() {</code></p>
+<p><code>Serial.print("checking wifi...");</code></p>
+<p><code>while (WiFi.status() != WL_CONNECTED) {</code></p>
+<p><code>Serial.print(".");</code></p>
+<p><code>delay(1000);</code></p>
+<p><code>}</code></p>
+<p><code>Serial.print("\nconnecting...");</code></p>
+<p><code>while (!client.connect("arduino", "try", "try")) {</code></p>
+<p><code>Serial.print(".");</code></p>
+<p><code>delay(1000);</code></p>
+<p><code>}</code></p>
+<p><code>Serial.println("\nconnected!");</code></p>
+<p><code>client.subscribe("node01");</code></p>
+<p><code>// client.unsubscribe("/example");</code></p>
+<p><code>}</code></p>
+<p><code>void loop() {</code></p>
+<p><code>client.loop();</code></p>
+<p><code>delay(10); // &lt;- fixes some issues with WiFi stability</code></p>
+<p><code>if(!client.connected()) {</code></p>
+<p><code>connect();</code></p>
+<p><code>}</code></p>
+<p><code>// publish a message roughly every second.</code></p>
+<p><code>if(millis() - lastMillis &gt; 1000) {</code></p>
+<p><code>lastMillis = millis();</code></p>
+<p><code>client.publish("/hello", "world");</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>void messageReceived(String topic, String payload, char * bytes, unsigned int length) {</code></p>
+<p><code>Serial.print("incoming: ");</code></p>
+<p><code>Serial.print(topic);</code></p>
+<p><code>Serial.print(" - ");</code></p>
+<p><code>Serial.print(payload);</code></p>
+<p><code>Serial.println();</code></p>
+<p><code>if (payload=="a"){digitalWrite(0,HIGH);}</code></p>
+<p><code>else digitalWrite(0,LOW);</code></p>
+<p><code>}</code></p>
 <h2 id="step-4-install-mqtt-client-software-for-android-phone">* Step 4: Install MQTT client software for Android phone</h2>
 <p>There are many softwares available for MQTT protocol testing. I use <a href="https://play.google.com/store/apps/details?id=at.tripwire.mqtt.client">MyMQTT</a> for my Android phone.</p>
 <p><img alt="" src="https://lh5.ggpht.com/R7Z4Cr_Mze_EEzR0bZKg40aUqowmynAAcFxEUOnajwvg4Y4005lL1NOrW4UrPAXrFmI=h900-rw" /></p>
 <p>For "Setting": we need MQTT broker host (it is the Gateway IP: <code>172.16.1.1:1883</code>) and "Topic" for publishing message (it is: <code>Node01</code>).</p>
 <p>For publishing a message: navigate to "Publish" button -&gt; then fill in the Topic (<code>Node01</code>) and message.</p>
+<h2 id="demo-video">* Demo Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Gx46pzjmSqM" frameborder="0" allowfullscreen></iframe>
+
 <h2 id="refferences">Refferences</h2>
 <p>[1] <a href="https://en.wikipedia.org/wiki/MQTT">https://en.wikipedia.org/wiki/MQTT</a></p>
               

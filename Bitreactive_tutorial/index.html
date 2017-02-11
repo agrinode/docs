@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Bitreactive tutorial - AgriNode Project</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Bitreactive tutorial";
+    var mkdocs_page_input_path = "Bitreactive_tutorial.md";
+    var mkdocs_page_url = "/Bitreactive_tutorial/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> AgriNode Project</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../system_architech/">System Architecture</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../mqtt_demo/">MQTT demo</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Bitreactive tutorial</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#tutorial-build-a-configurable-eclipse-kura-application-via-reactive-blocks">Tutorial: Build a Configurable Eclipse Kura Application via Reactive Blocks</a></li>
+                
+                    <li><a class="toctree-l4" href="#summary">Summary.</a></li>
+                
+                    <li><a class="toctree-l4" href="#about-reactive-blocks">About Reactive Blocks.</a></li>
+                
+                    <li><a class="toctree-l4" href="#about-agrinode-bundle">About "AgriNode bundle".</a></li>
+                
+                    <li><a class="toctree-l4" href="#build-the-agrinode-bundle-with-reactive-blocks">Build the Agrinode bundle with Reactive Blocks.</a></li>
+                
+                    <li><a class="toctree-l4" href="#deploy-the-bundle">Deploy the bundle</a></li>
+                
+                    <li><a class="toctree-l4" href="#test-result">Test result.</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">AgriNode Project</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Bitreactive tutorial</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="tutorial-build-a-configurable-eclipse-kura-application-via-reactive-blocks">Tutorial: Build a Configurable Eclipse Kura Application via Reactive Blocks</h1>
+<h2 id="summary">Summary.</h2>
+<p>This tutorial demonstrates how to build a Kura application into a bundle by using Reactive Blocks.</p>
+<h2 id="about-reactive-blocks">About Reactive Blocks.</h2>
+<p>Bitreactive provides the visual development environment that allows java users build their own IoT applications by simply connecting building blocks. Each Reactive Block is designed for a specific purpose such as connecting to Cloud platform (IBM Watson IoT, Xively,...), providing MQTT protocol, LoRaWAN interface,...
+Reactive Blocks is a Plugin for Eclipse, which provides a development environment for a developer build a complex application by drag and drop reactive blocks from the Reactive Blocks libraries.
+For me, I have a very basic knowledge of Java but I can build a complex java application with Reactive Blocks. Each block has a description in the form of input and output pins and contract. In addition, Reactive Blocks provides the analyze and animation tools which are helpful for testing the applications.</p>
+<h3 id="references">References:</h3>
+<p>Block by Block Towards IoT Applications
+Integrating Reactive Block with JamaicaVM</p>
+<h2 id="about-agrinode-bundle">About "AgriNode bundle".</h2>
+<p>In this post, I share the workflow of "AgriNode" bundle that will be installed into Eclipse Kura based gateway. The gateway has MQTT server which sensor nodes connect to.
+The bundle purpose is to send a command for getting data to sensor nodes via MQTT (with a gateway server: 172.16.1.1:1883). After receiving the command from the gateway, sensor nodes take sensors reading then send data back to the gateway. The gateway then forwards data to the cloud via MQTT protocol (with another broker: blocks2.bitreactive.com).</p>
+<h3 id="requierment">Requierment.</h3>
+<p>Eclipse
+Install Reactive Blocks for Kura</p>
+<h2 id="build-the-agrinode-bundle-with-reactive-blocks">Build the Agrinode bundle with Reactive Blocks.</h2>
+<p><img alt="" src="https://2.bp.blogspot.com/-iT9vqyTUkS0/WJ6ouBuWIlI/AAAAAAAAIWQ/x_zYRPVGPf4O2vDS137Ogx939NxRC7bkwCLcB/s640/Untitled.png" /></p>
+<ul>
+<li>
+<p>Block 1 - Periodic Toggler: To emit a signal (to publish a command message to sensor nodes) every configurable duration, The duration is configurable through Eclipse Kura configuration.</p>
+</li>
+<li>
+<p>Block 2 - MQTT Publish: This block publishes messages on the local MQTT Broker (172.16.1.1:1883). "init" function:</p>
+</li>
+</ul>
+<pre><code>public MQTTConfigParam init() {
+MQTTConfigParam p = new MQTTConfigParam(&quot;172.16.1.1&quot;);
+return p;
+}
+</code></pre>
+
+<ul>
+<li>Block 3 - MQTT subscriber: This block subscribes to messages from sensor nodes (node01, node02,...) on the local MQTT Broker (172.16.1.1:1883). "init1" function:</li>
+</ul>
+<pre><code>public MQTTConfigParam init1() {
+MQTTConfigParam p1 = new MQTTConfigParam(&quot;172.16.1.1&quot;);
+p1.addSubscribeTopic(&quot;node02_data&quot;);
+p1.addSubscribeTopic(&quot;node01_data&quot;);
+return p1;
+}
+</code></pre>
+
+<ul>
+<li>Block 4 - MQTT Publish: This block publishes messages on the cloud MQTT Broker (blocks2.bitreactive.com). "init2" function:</li>
+</ul>
+<pre><code>public MQTTConfigParam init2() {
+MQTTConfigParam p2 = new MQTTConfigParam(&quot;blocks2.bitreactive.com&quot;);
+return p2;
+}
+</code></pre>
+
+<h2 id="deploy-the-bundle">Deploy the bundle</h2>
+<p>First, build the project for Kura --&gt; quick build to make a <em>.dp file --&gt; install </em>.dp file via Kura Web ui.</p>
+<p><img alt="" src="https://2.bp.blogspot.com/-YXpSPIdixco/WJ6spp5r59I/AAAAAAAAIWc/d-24LGz1t2UDD-HYEXk-PPu3Ek2k0UTcACLcB/s640/agrinode_kura.png" /></p>
+<h2 id="test-result">Test result.</h2>
+<p>The data is now available at http://agrinode.mybluemix.net/ui/#/0</p>
+<p>The bundle works fine but there is an error that needs to be fixed (I am working on it).
+The problem is that the bundle will not send any data to the cloud and can not reconnect to the cloud broker if the internet connection lost occurs. The Block 4 will disconnect and not reconnect to the broker if there is any error.  The only way to get the bundle works again is to reboot the gateway.
+The picture below figures out this issue:</p>
+<p><img alt="" src="https://2.bp.blogspot.com/-KIRteANHbMw/WJ6vEHf4tmI/AAAAAAAAIWo/ZjkWqiyE1gAaShzpTlChRBDlspn51uv5ACLcB/s640/agrinode_bitreactive_result.png" /></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../mqtt_demo/" class="btn btn-neutral" title="MQTT demo"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../mqtt_demo/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+
+</body>
+</html>

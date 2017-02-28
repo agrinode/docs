@@ -82,6 +82,10 @@
             
                 <li class="toctree-l3"><a href="#node-red-tutorial">Node-red tutorial</a></li>
                 
+                    <li><a class="toctree-l4" href="#deploy-a-node-red-application-on-ibm-blumix">Deploy a Node-red application on IBM Blumix</a></li>
+                
+                    <li><a class="toctree-l4" href="#deploy-the-node-red-flow-app-for-receiving-data-from-the-gateway">Deploy the node-red flow app for receiving data from the gateway</a></li>
+                
             
             </ul>
         
@@ -121,6 +125,16 @@
             <div class="section">
               
                 <h2 id="node-red-tutorial">Node-red tutorial</h2>
+<p>We built a Node-red based application in IBM Bluemix platform for data stored and visualized. Environmental information can be monitored everywhere if there is the internet available by surfing to the specific web address <a href="http://agrinode.mybluemix.net/ui">http://agrinode.mybluemix.net/ui</a> to monitor the data. </p>
+<h3 id="deploy-a-node-red-application-on-ibm-blumix">Deploy a Node-red application on IBM Blumix</h3>
+<p>Please follow this link: <a href="https://nodered.org/docs/platforms/bluemix">https://nodered.org/docs/platforms/bluemix</a></p>
+<h3 id="deploy-the-node-red-flow-app-for-receiving-data-from-the-gateway">Deploy the node-red flow app for receiving data from the gateway</h3>
+<p>The figure demonstrates how to receive and process data from each sensor node.</p>
+<p><img alt="nodered flow" src="https://3.bp.blogspot.com/-Tz00FfFAsgo/WLVCrHU3JPI/AAAAAAAAIjg/3PfjQhpt-EIQb2-EzaHdETTghhvMUNF8ACLcB/s1600/nodered.png" /></p>
+<p>Node  1 is the MQTT node which subscribes the gateway topic to receive the gateway data.
+Node 2 is a mongodb node which is responsible for storing sensor data in mongodb (mLab).
+Node 3 is a dashboard node which is used to visualize sensor data as the graphs
+Moreover, we built the warning system to warn user if the temperature goes high for example.</p>
               
             </div>
           </div>

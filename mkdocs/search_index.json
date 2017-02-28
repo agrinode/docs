@@ -134,6 +134,16 @@
             "location": "/Bitreactive_tutorial/#test-result", 
             "text": "The data is now available at  http://agrinode.mybluemix.net/ui/  The bundle works fine but there is an error that needs to be fixed (I am working on it).  The problem is that the bundle will not send any data to the cloud and can not reconnect to the cloud broker if the internet connection lost occurs. The Block 4 will disconnect and not reconnect to the broker if there is any error.  The only way to get the bundle works again is to reboot the gateway. \nThe picture below figures out this issue:", 
             "title": "Test result."
+        }, 
+        {
+            "location": "/nodered_tutorial/", 
+            "text": "Node-red tutorial", 
+            "title": "Node Red tutorial"
+        }, 
+        {
+            "location": "/nodered_tutorial/#node-red-tutorial", 
+            "text": "", 
+            "title": "Node-red tutorial"
         }
     ]
 }

@@ -4,5 +4,6 @@ pages:
 - System Architecture: system_architech.md
 - MQTT demo: mqtt_demo.md
 - Bitreactive tutorial: Bitreactive_tutorial.md
+- Node Red tutorial: nodered_tutorial.md
 
 theme: readthedocs

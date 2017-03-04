@@ -134,6 +134,26 @@
             "location": "/Bitreactive_tutorial/#test-result", 
             "text": "The data is now available at  http://agrinode.mybluemix.net/ui/  The bundle works fine but there is an error that needs to be fixed (I am working on it).  The problem is that the bundle will not send any data to the cloud and can not reconnect to the cloud broker if the internet connection lost occurs. The Block 4 will disconnect and not reconnect to the broker if there is any error.  The only way to get the bundle works again is to reboot the gateway. \nThe picture below figures out this issue:", 
             "title": "Test result."
+        }, 
+        {
+            "location": "/nodered_tutorial/", 
+            "text": "Node-red tutorial\n\n\nWe built a Node-red based application in IBM Bluemix platform for data stored and visualized. Environmental information can be monitored everywhere if there is the internet available by surfing to the specific web address \nhttp://agrinode.mybluemix.net/ui\n to monitor the data. \n\n\nDeploy a Node-red application on IBM Blumix\n\n\nPlease follow this link: \nhttps://nodered.org/docs/platforms/bluemix\n\n\nDeploy the node-red flow app for receiving data from the gateway\n\n\nThe figure demonstrates how to receive and process data from each sensor node.\n\n\n\n\nNode  1 is the MQTT node which subscribes the gateway topic to receive the gateway data.\nNode 2 is a mongodb node which is responsible for storing sensor data in mongodb (mLab).\nNode 3 is a dashboard node which is used to visualize sensor data as the graphs\nMoreover, we built the warning system to warn user if the temperature goes high for example.", 
+            "title": "Node Red tutorial"
+        }, 
+        {
+            "location": "/nodered_tutorial/#node-red-tutorial", 
+            "text": "We built a Node-red based application in IBM Bluemix platform for data stored and visualized. Environmental information can be monitored everywhere if there is the internet available by surfing to the specific web address  http://agrinode.mybluemix.net/ui  to monitor the data.", 
+            "title": "Node-red tutorial"
+        }, 
+        {
+            "location": "/nodered_tutorial/#deploy-a-node-red-application-on-ibm-blumix", 
+            "text": "Please follow this link:  https://nodered.org/docs/platforms/bluemix", 
+            "title": "Deploy a Node-red application on IBM Blumix"
+        }, 
+        {
+            "location": "/nodered_tutorial/#deploy-the-node-red-flow-app-for-receiving-data-from-the-gateway", 
+            "text": "The figure demonstrates how to receive and process data from each sensor node.   Node  1 is the MQTT node which subscribes the gateway topic to receive the gateway data.\nNode 2 is a mongodb node which is responsible for storing sensor data in mongodb (mLab).\nNode 3 is a dashboard node which is used to visualize sensor data as the graphs\nMoreover, we built the warning system to warn user if the temperature goes high for example.", 
+            "title": "Deploy the node-red flow app for receiving data from the gateway"
         }
     ]
 }

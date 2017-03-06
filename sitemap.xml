@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2017-03-04</lastmod>
+     <lastmod>2017-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,37 +12,41 @@
     
     <url>
      <loc>/system_architech/</loc>
-     <lastmod>2017-03-04</lastmod>
+     <lastmod>2017-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
-        
     <url>
      <loc>/orangepi/</loc>
-     <lastmod>2017-03-04</lastmod>
+     <lastmod>2017-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
+    
+
+    
     <url>
      <loc>/mqtt_demo/</loc>
-     <lastmod>2017-03-04</lastmod>
+     <lastmod>2017-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
+    
+
+    
     <url>
      <loc>/Bitreactive_tutorial/</loc>
-     <lastmod>2017-03-04</lastmod>
+     <lastmod>2017-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
+    
+
+    
     <url>
      <loc>/nodered_tutorial/</loc>
-     <lastmod>2017-03-04</lastmod>
+     <lastmod>2017-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     
 
 </urlset>

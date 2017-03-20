@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Install Kura on Orange Pi - AgriNode Project</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Install Kura on Orange Pi";
+    var mkdocs_page_input_path = "orangepi.md";
+    var mkdocs_page_url = "/orangepi/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> AgriNode Project</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../system_architech/">System Architecture</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Install Kura on Orange Pi</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#orange-pi-zero">Orange Pi Zero</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#install-debian-on-orange-pi">Install Debian on Orange Pi</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#install-default-java-jrejdk-on-debian-jdk-7">Install default java JRE/JDK on Debian (JDK 7)</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#or-you-can-install-oracle-jdk-8">Or you can install Oracle JDK 8</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#install-eclipse-kura">Install Eclipse Kura</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../mqtt_demo/">MQTT demo</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Bitreactive_tutorial/">Bitreactive tutorial</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../nodered_tutorial/">Node Red tutorial</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">AgriNode Project</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Install Kura on Orange Pi</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="orange-pi-zero">Orange Pi Zero</h3>
+<p>Orange Pi Zero is a cheap single-board computer. It can run Android 4.4, Ubuntu, Debian.  It uses the AllWinner H2 SoC, and has 256MB/512MB DDR3 SDRAM(256MB version is Standard version</p>
+<p><img alt="agrinode orange pi zero" src="http://www.orangepi.org/orangepizero/images/orangepizero_info.jpg" /></p>
+<p>Order here: <a href="http://www.orangepi.org/orangepizero/">http://www.orangepi.org/orangepizero/</a></p>
+<h3 id="install-debian-on-orange-pi">Install Debian on Orange Pi</h3>
+<p>Please follow the link: <a href="https://docs.armbian.com/User-Guide_Getting-Started/">https://docs.armbian.com/User-Guide_Getting-Started/</a></p>
+<h3 id="install-default-java-jrejdk-on-debian-jdk-7">Install default java JRE/JDK on Debian (JDK 7)</h3>
+<ul>
+<li>Web Browser Plugin</li>
+</ul>
+<p>To install the default Web Browser Plugin on your system, run: </p>
+<pre><code>apt-get install icedtea-plugin
+</code></pre>
+
+<ul>
+<li>JRE
+To install the default JRE (Java Runtime Environment) on your system, run: </li>
+</ul>
+<pre><code>apt-get install default-jre
+</code></pre>
+
+<ul>
+<li>JDK</li>
+</ul>
+<p>To install the default JDK (Java Development Kit) on your system, run: </p>
+<pre><code>apt-get install default-jdk
+</code></pre>
+
+<p>Source: <a href="https://wiki.debian.org/Java">https://wiki.debian.org/Java</a></p>
+<h3 id="or-you-can-install-oracle-jdk-8">Or you can install Oracle JDK 8</h3>
+<pre><code>echo &quot;deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main&quot; | sudo tee /etc/apt/sources.list.d/webupd8team-java.list
+echo &quot;deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main&quot; | sudo tee -a /etc/apt/sources.list.d/webupd8team-java.list
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+sudo apt-get install oracle-java8-set-default
+</code></pre>
+
+<h3 id="install-eclipse-kura">Install Eclipse Kura</h3>
+<p>OrangePi runs Debian 8. It is compatible with <a href="http://eclipse.github.io/kura/doc/beaglebone-quick-start.html">Kura pakage for BeagleBone</a></p>
+<ul>
+<li>Install the gdebi command line tool:</li>
+</ul>
+<pre><code>sudo apt-get update
+sudo apt-get install gdebi-core
+</code></pre>
+
+<ul>
+<li>Download the Kura package:</li>
+</ul>
+<pre><code>wget http://download.eclipse.org/kura/releases/&lt;version&gt;/kura_&lt;version&gt;_beaglebone_debian_installer.deb
+</code></pre>
+
+<p>Note: replace <version> in the URL above with the version number of the latest release (e.g. 2.1.0).</p>
+<ul>
+<li>Install Kura:</li>
+</ul>
+<pre><code>sudo gdebi kura_&lt;version&gt;_beaglebone_debian_installer.deb
+</code></pre>
+
+<ul>
+<li>Reboot the Orange Pi</li>
+</ul>
+<pre><code>sudo reboot
+</code></pre>
+
+<ul>
+<li>Kura setups a local web ui that is available using a browser via:</li>
+</ul>
+<pre><code>http://&lt;device-ip&gt;
+</code></pre>
+
+<p>For more detail, please visit: <a href="http://eclipse.github.io/kura/doc/beaglebone-quick-start.html">http://eclipse.github.io/kura/doc/beaglebone-quick-start.html</a></p>
+<p>Video:</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../mqtt_demo/" class="btn btn-neutral float-right" title="MQTT demo">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../system_architech/" class="btn btn-neutral" title="System Architecture"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../system_architech/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../mqtt_demo/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

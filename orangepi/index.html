@@ -81,9 +81,6 @@
                 <li class="toctree-l3"><a href="#install-eclipse-kura">Install Eclipse Kura</a></li>
                 
             
-                <li class="toctree-l3"><a href="#tutorial-video">Tutorial Video</a></li>
-                
-            
             </ul>
         
     </li>
@@ -172,7 +169,12 @@ To install the default JRE (Java Runtime Environment) on your system, run: </li>
 
 <p>Source: <a href="https://wiki.debian.org/Java">https://wiki.debian.org/Java</a></p>
 <h3 id="or-you-can-install-oracle-jdk-8">Or you can install Oracle JDK 8</h3>
-<pre><code>sudo apt-get install oracle-java8-installer
+<pre><code>echo &quot;deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main&quot; | sudo tee /etc/apt/sources.list.d/webupd8team-java.list
+echo &quot;deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main&quot; | sudo tee -a /etc/apt/sources.list.d/webupd8team-java.list
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+sudo apt-get install oracle-java8-set-default
 </code></pre>
 
 <h3 id="install-eclipse-kura">Install Eclipse Kura</h3>
@@ -210,8 +212,7 @@ sudo apt-get install gdebi-core
 </code></pre>
 
 <p>For more detail, please visit: <a href="http://eclipse.github.io/kura/doc/beaglebone-quick-start.html">http://eclipse.github.io/kura/doc/beaglebone-quick-start.html</a></p>
-<h3 id="tutorial-video">Tutorial Video</h3>
-<div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/AhVsEFJdafo?ecver=2" width="640" height="360" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
+<p>Video:</p>
               
             </div>
           </div>

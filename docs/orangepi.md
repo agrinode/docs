@@ -4,7 +4,7 @@ Orange Pi Zero is a cheap single-board computer. It can run Android 4.4, Ubuntu,
 
 ![agrinode orange pi zero](http://www.orangepi.org/orangepizero/images/orangepizero_info.jpg)
 
-Order here: http://www.orangepi.org/orangepizero/
+Order here: [http://www.orangepi.org/orangepizero/](http://www.orangepi.org/orangepizero/)
 
 ### Install Debian on Orange Pi
 
@@ -40,7 +40,12 @@ Source: [https://wiki.debian.org/Java](https://wiki.debian.org/Java)
 ### Or you can install Oracle JDK 8
 
 ```
+echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" | sudo tee /etc/apt/sources.list.d/webupd8team-java.list
+echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" | sudo tee -a /etc/apt/sources.list.d/webupd8team-java.list
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
+sudo apt-get update
 sudo apt-get install oracle-java8-installer
+sudo apt-get install oracle-java8-set-default
 ```
 
 ### Install Eclipse Kura
@@ -82,6 +87,6 @@ http://<device-ip>
 
 For more detail, please visit: [http://eclipse.github.io/kura/doc/beaglebone-quick-start.html](http://eclipse.github.io/kura/doc/beaglebone-quick-start.html)
 
-
+Video:
 
 

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Install Node-REED on Orange Pi - AgriNode Project</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Install Node-REED on Orange Pi";
+    var mkdocs_page_input_path = "install_nodered_orangepi.md";
+    var mkdocs_page_url = "/install_nodered_orangepi/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> AgriNode Project</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../system_architech/">System Architecture</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../orangepi/">Install Kura on Orange Pi</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Install Node-REED on Orange Pi</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#install-node-red-on-orange-pi">Install Node-red on Orange Pi</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-1-install-nodejs-v7x">Step 1: Install NodeJs v7.x</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-2-install-node-red">Step 2: Install Node-RED</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-3-start-node-red">Step 3: Start Node-RED</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-4-adding-nodes">Step 4: Adding nodes</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-5-optional-start-node-red-on-boot">Step 5 (optional): Start Node-RED on boot</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../mqtt_demo/">MQTT demo</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Bitreactive_tutorial/">Bitreactive tutorial</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../nodered_tutorial/">Node Red tutorial</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">AgriNode Project</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Install Node-REED on Orange Pi</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="install-node-red-on-orange-pi">Install Node-red on Orange Pi</h1>
+<h2 id="step-1-install-nodejs-v7x">Step 1: Install NodeJs v7.x</h2>
+<pre><code>curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+</code></pre>
+
+<h2 id="step-2-install-node-red">Step 2: Install Node-RED</h2>
+<p><code>sudo npm install -g --unsafe-perm node-red</code></p>
+<h2 id="step-3-start-node-red">Step 3: Start Node-RED</h2>
+<pre><code>root@orangepizero:~# node-red
+22 Mar 17:51:35 - [info]
+
+Welcome to Node-RED
+===================
+
+22 Mar 17:51:35 - [info] Node-RED version: v0.16.2
+22 Mar 17:51:35 - [info] Node.js  version: v7.7.3
+22 Mar 17:51:35 - [info] Linux 3.4.113-sun8i arm LE
+22 Mar 17:51:37 - [info] Loading palette nodes
+22 Mar 17:51:43 - [warn] ------------------------------------------------------
+22 Mar 17:51:43 - [warn] [rpi-gpio] Info : Ignoring Raspberry Pi specific node
+22 Mar 17:51:43 - [warn] ------------------------------------------------------
+22 Mar 17:51:43 - [info] Settings file  : /root/.node-red/settings.js
+22 Mar 17:51:43 - [info] User directory : /root/.node-red
+22 Mar 17:51:43 - [info] Flows file     : /root/.node-red/flows_orangepizero.json
+22 Mar 17:51:43 - [info] Creating new flow file
+22 Mar 17:51:43 - [info] Starting flows
+22 Mar 17:51:43 - [info] Started flows
+22 Mar 17:51:43 - [info] Server now running at http://127.0.0.1:1880/
+
+</code></pre>
+
+<h2 id="step-4-adding-nodes">Step 4: Adding nodes</h2>
+<pre><code>cd $HOME/.node-red
+npm install &lt;npm-package-name&gt;
+
+</code></pre>
+
+<p>replace <npm-package-name> with specific nodes package name that you can find in <a href="https://flows.nodered.org/">nodes library</a>. For example, the folowing commands will install package:  Orange Pi GPIO</p>
+<p><code>sudo npm install node-red-contrib-opi-gpio</code></p>
+<p>Restart Node-RED. Then open web-brownser. Navigate to http://orange_pi_ip:1880/</p>
+<p>You can see the result as the picture below</p>
+<h2 id="step-5-optional-start-node-red-on-boot">Step 5 (optional): Start Node-RED on boot</h2>
+<p>Install nodered.service file and start and stop scripts.</p>
+<pre><code>sudo wget https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/nodered.service -O /lib/systemd/system/nodered.service
+sudo wget https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/node-red-start -O /usr/bin/node-red-start
+sudo wget https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/node-red-stop -O /usr/bin/node-red-stop
+sudo chmod +x /usr/bin/node-red-st*
+sudo systemctl daemon-reload
+
+</code></pre>
+
+<p><code>sudo nano /lib/systemd/system/nodered.service</code></p>
+<p>Edit the <code>nodered.service</code> file as follow:</p>
+<pre><code># systemd service file to start Node-RED
+[Unit]
+Description=Node-RED graphical event wiring tool.
+Wants=network.target
+Documentation=http://nodered.org/docs/hardware/raspberrypi.html
+[Service]
+Type=simple
+# Run as root user in order to have access to gpio pins
+User=root
+Group=root
+Nice=5
+Environment=&quot;NODE_OPTIONS=--max-old-space-size=128&quot;
+#Environment=&quot;NODE_RED_OPTIONS=-v&quot;
+ExecStart=/usr/bin/env node-red-pi $NODE_OPTIONS $NODE_RED_OPTIONS
+KillSignal=SIGINT
+Restart=on-failure
+SyslogIdentifier=Node-RED
+[Install]
+WantedBy=multi-user.target
+
+</code></pre>
+
+<p>To then enable Node-RED to run automatically at every boot</p>
+<pre><code>sudo systemctl daemon-reload
+sudo systemctl enable nodered.service
+
+</code></pre>
+
+<p>It can be disabled by</p>
+<p><code>sudo systemctl disable nodered.service</code></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../mqtt_demo/" class="btn btn-neutral float-right" title="MQTT demo">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../orangepi/" class="btn btn-neutral" title="Install Kura on Orange Pi"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../orangepi/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../mqtt_demo/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

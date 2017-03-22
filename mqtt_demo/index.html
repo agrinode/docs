@@ -88,6 +88,8 @@
                 
                     <li><a class="toctree-l4" href="#test-mosquitto-broker">* Test mosquitto broker</a></li>
                 
+                    <li><a class="toctree-l4" href="#result">Result:</a></li>
+                
             
                 <li class="toctree-l3"><a href="#step-3-install-mqtt-demo-code-for-arduino">* Step 3: Install MQTT demo code for Arduino</a></li>
                 
@@ -183,10 +185,16 @@
 <p><code>sudo apt-get update</code></p>
 <p>And discover what mosquitto packages are available:</p>
 <p><code>apt-cache search mosquitto</code></p>
-<p>Or just install:</p>
+<p>Or just install mosquitto broker and clients tool:</p>
 <p><code>sudo apt-get install mosquitto mosquitto-clients python-mosquitto</code></p>
 <p>For more information, please follow this link: <a href="http://mosquitto.org/2013/01/mosquitto-debian-repository/">http://mosquitto.org/2013/01/mosquitto-debian-repository/</a></p>
 <h3 id="test-mosquitto-broker">* Test mosquitto broker</h3>
+<p>Open up two more terminal windows.</p>
+<p>In Terminal window (subscriber) 1 type:</p>
+<p><code>mosquitto_sub -d -t hello/world</code></p>
+<p>In Terminal window 2 (publisher) type:</p>
+<p><code>mosquitto_pub -d -t hello/world -m "Hello from Terminal window 2!"</code></p>
+<h3 id="result">Result:</h3>
 <h2 id="step-3-install-mqtt-demo-code-for-arduino">* Step 3: Install MQTT demo code for Arduino</h2>
 <p>The Huzzah esp8266 board will receive the message from the phone in order to control a LED (connected to pin #0). The LED will be turned off if Huzzah receives message "a" and turn on with others messages.</p>
 <p><img alt="" src="https://files.slack.com/files-pri/T3DCSETTK-F3MB79KL4/img_20170104_233613.jpg?pub_secret=a967d9fcc5" /></p>

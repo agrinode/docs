@@ -84,7 +84,9 @@
                 <li class="toctree-l3"><a href="#step-1-setup-kura-into-raspberry-pi">* Step 1: Setup Kura into Raspberry Pi</a></li>
                 
             
-                <li class="toctree-l3"><a href="#step-2-install-mosquitto-broker-into-raspberry-pi">* Step 2: Install Mosquitto broker into Raspberry Pi</a></li>
+                <li class="toctree-l3"><a href="#step-2-install-mosquitto-broker-on-raspberry-pi">* Step 2: Install Mosquitto broker on Raspberry Pi</a></li>
+                
+                    <li><a class="toctree-l4" href="#test-mosquitto-broker">* Test mosquitto broker</a></li>
                 
             
                 <li class="toctree-l3"><a href="#step-3-install-mqtt-demo-code-for-arduino">* Step 3: Install MQTT demo code for Arduino</a></li>
@@ -168,7 +170,7 @@
 <p>Follow this link for installing Kura into Raspberry Pi: <a href="http://eclipse.github.io/kura/doc/raspberry-pi-quick-start.html">http://eclipse.github.io/kura/doc/raspberry-pi-quick-start.html</a></p>
 <p>We setup the Raspbery Pi in the Access Point mode for providing WiFi connection:</p>
 <p><img alt="" src="https://files.slack.com/files-pri/T3DCSETTK-F3MUBSZML/untitled.png?pub_secret=a5706e31ba" /></p>
-<h2 id="step-2-install-mosquitto-broker-into-raspberry-pi">* Step 2: Install Mosquitto broker into Raspberry Pi</h2>
+<h2 id="step-2-install-mosquitto-broker-on-raspberry-pi">* Step 2: Install Mosquitto broker on Raspberry Pi</h2>
 <p>We use Mosquitto platform as a MQTT broker running on Rapsberry Pi. It provides MQTT protocol for our sensor network system. For more information about MQTT protocol; please visit this page: <a href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/aimsupport/entry/what_is_mqtt_and_how_does_it_work_with_websphere_mq?lang=en">what is MQTT and how does it work</a></p>
 <p>To install Mosquitto, follow these steps:</p>
 <p><code>wget http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key</code></p>
@@ -176,15 +178,15 @@
 <p>Then make the repository available to apt:</p>
 <p><code>cd /etc/apt/sources.list.d/</code></p>
 <p>Then one of the following, depending on which version of debian you are using:</p>
-<p><code>sudo wget http://repo.mosquitto.org/debian/mosquitto-wheezy.list
-sudo wget http://repo.mosquitto.org/debian/mosquitto-jessie.list</code></p>
+<p><code>sudo wget http://repo.mosquitto.org/debian/mosquitto-jessie.list</code></p>
 <p>Then update apt information:</p>
-<p><code>apt-get update</code></p>
+<p><code>sudo apt-get update</code></p>
 <p>And discover what mosquitto packages are available:</p>
 <p><code>apt-cache search mosquitto</code></p>
 <p>Or just install:</p>
-<p><code>apt-get install mosquitto</code></p>
+<p><code>sudo apt-get install mosquitto mosquitto-clients python-mosquitto</code></p>
 <p>For more information, please follow this link: <a href="http://mosquitto.org/2013/01/mosquitto-debian-repository/">http://mosquitto.org/2013/01/mosquitto-debian-repository/</a></p>
+<h3 id="test-mosquitto-broker">* Test mosquitto broker</h3>
 <h2 id="step-3-install-mqtt-demo-code-for-arduino">* Step 3: Install MQTT demo code for Arduino</h2>
 <p>The Huzzah esp8266 board will receive the message from the phone in order to control a LED (connected to pin #0). The LED will be turned off if Huzzah receives message "a" and turn on with others messages.</p>
 <p><img alt="" src="https://files.slack.com/files-pri/T3DCSETTK-F3MB79KL4/img_20170104_233613.jpg?pub_secret=a967d9fcc5" /></p>

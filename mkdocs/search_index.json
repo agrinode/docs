@@ -2,18 +2,28 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Welcome to Agrinode Project\n\n\nHomepage: \nhttps://agrinode.github.io\n\n\nBuilding Wireless Sensor Network for Agriculture Applications\n\n\nWe are participant in \nOpenIoTChallenge 3.0\n\n\n\n\nAny comments, suggestions are welcome.\n\n\nFeel free to share your ideas in our blog: \nAgrinode Blogspot", 
+            "text": "Welcome to Agrinode Project\n\n\nHomepage: \nhttps://agrinode.github.io\n\n\nBlog: \nhttps://agrinode.blogspot.com\n\n\nBuilding Wireless Sensor Network for Agriculture Applications\n\n\nWe - the AgriNode team are proud to receive the Special Acknowledgement from the judging panel.\n\n\nhttps://www.eclipse.org/org/press-release/openiotchallenge3_winners.php\n\n\nThanks to the EclipseIoT and the sponsors for organizing the Open IoT Challenge where we have learned about Open-source IoT platforms and made new friends in the IoT world.\n\n\nWe are participant in \nOpenIoTChallenge 3.0\n\n\n\n\nAny comments, suggestions are welcome.\n\n\nFeel free to share your ideas in our blog: \nAgrinode Blogspot", 
             "title": "Home"
         }, 
         {
             "location": "/#welcome-to-agrinode-project", 
-            "text": "Homepage:  https://agrinode.github.io", 
+            "text": "Homepage:  https://agrinode.github.io  Blog:  https://agrinode.blogspot.com", 
             "title": "Welcome to Agrinode Project"
         }, 
         {
             "location": "/#building-wireless-sensor-network-for-agriculture-applications", 
             "text": "", 
             "title": "Building Wireless Sensor Network for Agriculture Applications"
+        }, 
+        {
+            "location": "/#we-the-agrinode-team-are-proud-to-receive-the-special-acknowledgement-from-the-judging-panel", 
+            "text": "https://www.eclipse.org/org/press-release/openiotchallenge3_winners.php", 
+            "title": "We - the AgriNode team are proud to receive the Special Acknowledgement from the judging panel."
+        }, 
+        {
+            "location": "/#thanks-to-the-eclipseiot-and-the-sponsors-for-organizing-the-open-iot-challenge-where-we-have-learned-about-open-source-iot-platforms-and-made-new-friends-in-the-iot-world", 
+            "text": "", 
+            "title": "Thanks to the EclipseIoT and the sponsors for organizing the Open IoT Challenge where we have learned about Open-source IoT platforms and made new friends in the IoT world."
         }, 
         {
             "location": "/#we-are-participant-in-openiotchallenge-30", 

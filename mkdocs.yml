@@ -7,5 +7,6 @@ pages:
 - MQTT demo: mqtt_demo.md
 - Bitreactive tutorial: Bitreactive_tutorial.md
 - Node Red tutorial: nodered_tutorial.md
+- OpenHAB: openhab2_weather_demo.md
 
 theme: readthedocs

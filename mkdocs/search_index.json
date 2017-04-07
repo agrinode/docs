@@ -239,6 +239,11 @@
             "location": "/nodered_tutorial/#deploy-the-node-red-flow-app-for-receiving-data-from-the-gateway", 
             "text": "The figure demonstrates how to receive and process data from each sensor node.   Node  1 is the MQTT node which subscribes the gateway topic to receive the gateway data.\nNode 2 is a mongodb node which is responsible for storing sensor data in mongodb (mLab).\nNode 3 is a dashboard node which is used to visualize sensor data as the graphs\nMoreover, we built the warning system to warn user if the temperature goes high for example.", 
             "title": "Deploy the node-red flow app for receiving data from the gateway"
+        }, 
+        {
+            "location": "/openhab2_weather_demo/", 
+            "text": "tra c\u1ee9u WOEID", 
+            "title": "OpenHAB"
         }
     ]
 }

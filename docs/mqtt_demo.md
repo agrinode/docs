@@ -27,7 +27,7 @@ We setup the Raspbery Pi in the Access Point mode for providing WiFi connection:
 ![](https://files.slack.com/files-pri/T3DCSETTK-F3MUBSZML/untitled.png?pub_secret=a5706e31ba)
 
 
-## * Step 2: Install Mosquitto broker into Raspberry Pi
+## * Step 2: Install Mosquitto broker on Raspberry Pi
 
 We use Mosquitto platform as a MQTT broker running on Rapsberry Pi. It provides MQTT protocol for our sensor network system. For more information about MQTT protocol; please visit this page: [what is MQTT and how does it work](https://www.ibm.com/developerworks/mydeveloperworks/blogs/aimsupport/entry/what_is_mqtt_and_how_does_it_work_with_websphere_mq?lang=en)
 
@@ -43,23 +43,36 @@ Then make the repository available to apt:
 
 Then one of the following, depending on which version of debian you are using:
 
-` sudo wget http://repo.mosquitto.org/debian/mosquitto-wheezy.list
-sudo wget http://repo.mosquitto.org/debian/mosquitto-jessie.list`
+`sudo wget http://repo.mosquitto.org/debian/mosquitto-jessie.list`
  
 
 Then update apt information:
 
-` apt-get update`
+` sudo apt-get update`
 
 And discover what mosquitto packages are available:
 
 ` apt-cache search mosquitto`
 
-Or just install:
+Or just install mosquitto broker and clients tool:
 
- `apt-get install mosquitto`
+ `sudo apt-get install mosquitto mosquitto-clients python-mosquitto`
 
 For more information, please follow this link: [http://mosquitto.org/2013/01/mosquitto-debian-repository/](http://mosquitto.org/2013/01/mosquitto-debian-repository/)
+
+### * Test mosquitto broker
+
+Open up two more terminal windows.
+
+In Terminal window (subscriber) 1 type:
+
+`mosquitto_sub -d -t hello/world`
+
+In Terminal window 2 (publisher) type:
+
+`mosquitto_pub -d -t hello/world -m "Hello from Terminal window 2!"`
+
+### Result:
 
 
 ## * Step 3: Install MQTT demo code for Arduino

@@ -3,6 +3,7 @@ pages:
 - Home: index.md
 - System Architecture: system_architech.md
 - Install Kura on Orange Pi: orangepi.md
+- Install Node-RED on Orange Pi: install_nodered_orangepi.md
 - MQTT demo: mqtt_demo.md
 - Bitreactive tutorial: Bitreactive_tutorial.md
 - Node Red tutorial: nodered_tutorial.md

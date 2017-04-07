@@ -89,4 +89,4 @@ For more detail, please visit: [http://eclipse.github.io/kura/doc/beaglebone-qui
 
 Video:
 
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/AhVsEFJdafo" frameborder="0" allowfullscreen></iframe>

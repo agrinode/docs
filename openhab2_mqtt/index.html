@@ -110,7 +110,7 @@
             
                 <li class="toctree-l3"><a href="#openhab2-mqtt-binding-demo">OpenHab2 - MQTT binding demo</a></li>
                 
-                    <li><a class="toctree-l4" href="#prequire">Prequire</a></li>
+                    <li><a class="toctree-l4" href="#require">Require</a></li>
                 
             
             </ul>
@@ -151,9 +151,11 @@
             <div class="section">
               
                 <h1 id="openhab2-mqtt-binding-demo">OpenHab2 - MQTT binding demo</h1>
-<h2 id="prequire">Prequire</h2>
-<p>Openhab2.
-MQTT broker installed.</p>
+<p>This demo demonstrates how to use MQTT binding addon in OpenHAB2 installed into Orange Pi zero.
+The idea is very basic. A switch is created on default sitemap. When you turn on the switch, it sends "ON" message to Topic <code>/office/light</code> via MQTT broker that is installed on Orange Pi. When you turn off the switch, it sends "OFF" message to Topic <code>/office/light</code>.</p>
+<h2 id="require">Require</h2>
+<p><a href="http://docs.openhab.org/installation/index.html">Openhab2</a></p>
+<p><a href="https://agrinode.github.io/docs/mqtt_demo/">MQTT broker installed.</a></p>
 <h3 id="first-install-mqtt-binding-via-paperui">First, install MQTT binding via paperui</h3>
 <p>Define all the brokers which you want to connect to, in your <code>services/mqtt.cfg</code> file.</p>
 <pre><code>cd /etc/openhab2/services
@@ -194,6 +196,7 @@ mosquitto.clientId=lion
 
 </code></pre>
 
+<p><a href="https://2.bp.blogspot.com/-LHjyzaVBaEg/WPzjTu1rN8I/AAAAAAAAJj4/WiHRZgHBnX4325mCCe2aogpydlbHqEVxQCLcB/s400/openhab2%2Bmqtt%2Bbinding.png">openhab2 mqtt binding</a></p>
 <h3 id="show-log-file">Show log file</h3>
 <p>Open terminal, then run:</p>
 <p><code>tail -f /var/log/openhab2/openhab.log</code></p>

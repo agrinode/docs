@@ -258,7 +258,42 @@
         {
             "location": "/openhab2_weather_demo/", 
             "text": "tra c\u1ee9u WOEID", 
-            "title": "OpenHAB"
+            "title": "OpenHAB2 yahoo weather binding"
+        }, 
+        {
+            "location": "/openhab2_mqtt/", 
+            "text": "OpenHab2 - MQTT binding demo\n\n\nPrequire\n\n\nOpenhab2.\nMQTT broker installed.\n\n\nFirst, install MQTT binding via paperui\n\n\nDefine all the brokers which you want to connect to, in your \nservices/mqtt.cfg\n file.\n\n\ncd /etc/openhab2/services\n\nsudo nano mqtt.cfg\n\n\n\n\n\nThe file as follow\n\n\n#\n# Define your MQTT broker connections here for use in the MQTT Binding or MQTT\n# Persistence bundles. Replace \nbroker\n with an ID you choose.\n#\n\n# URL to the MQTT broker, e.g. tcp://localhost:1883 or ssl://localhost:8883\nmosquitto.url=tcp://localhost:1883\n\n# Optional. Client id (max 23 chars) to use when connecting to the broker.\n# If not provided a default one is generated.\nmosquitto.clientId=lion\n\n# Optional. User id to authenticate with the broker.\n#\nbroker\n.user=\nuser\n\n\n# Optional. Password to authenticate with the broker.\n#\nbroker\n.pwd=\npassword\n\n\n\n\n\n\nDefine demo item in \ndemo.items\n\n\nSwitch mySwitch {mqtt=\"\n[mosquitto:/office/light:command:ON:1],\n[mosquitto:/office/light:command:OFF:0]\"}\n\n\nDefine sitemap\n\n\nsitemap default label=\nMy first sitemap\n\n{\n    Switch item=mySwitch label=\nOffice Light\n\n\n}\n\n\n\n\n\nShow log file\n\n\nOpen terminal, then run:\n\n\ntail -f /var/log/openhab2/openhab.log", 
+            "title": "OpenHAB2 MQTT binding"
+        }, 
+        {
+            "location": "/openhab2_mqtt/#openhab2-mqtt-binding-demo", 
+            "text": "", 
+            "title": "OpenHab2 - MQTT binding demo"
+        }, 
+        {
+            "location": "/openhab2_mqtt/#prequire", 
+            "text": "Openhab2.\nMQTT broker installed.", 
+            "title": "Prequire"
+        }, 
+        {
+            "location": "/openhab2_mqtt/#first-install-mqtt-binding-via-paperui", 
+            "text": "Define all the brokers which you want to connect to, in your  services/mqtt.cfg  file.  cd /etc/openhab2/services\n\nsudo nano mqtt.cfg  The file as follow  #\n# Define your MQTT broker connections here for use in the MQTT Binding or MQTT\n# Persistence bundles. Replace  broker  with an ID you choose.\n#\n\n# URL to the MQTT broker, e.g. tcp://localhost:1883 or ssl://localhost:8883\nmosquitto.url=tcp://localhost:1883\n\n# Optional. Client id (max 23 chars) to use when connecting to the broker.\n# If not provided a default one is generated.\nmosquitto.clientId=lion\n\n# Optional. User id to authenticate with the broker.\n# broker .user= user \n\n# Optional. Password to authenticate with the broker.\n# broker .pwd= password", 
+            "title": "First, install MQTT binding via paperui"
+        }, 
+        {
+            "location": "/openhab2_mqtt/#define-demo-item-in-demoitems", 
+            "text": "Switch mySwitch {mqtt=\" [mosquitto:/office/light:command:ON:1], [mosquitto:/office/light:command:OFF:0]\"}", 
+            "title": "Define demo item in demo.items"
+        }, 
+        {
+            "location": "/openhab2_mqtt/#define-sitemap", 
+            "text": "sitemap default label= My first sitemap \n{\n    Switch item=mySwitch label= Office Light \n\n}", 
+            "title": "Define sitemap"
+        }, 
+        {
+            "location": "/openhab2_mqtt/#show-log-file", 
+            "text": "Open terminal, then run:  tail -f /var/log/openhab2/openhab.log", 
+            "title": "Show log file"
         }
     ]
 }

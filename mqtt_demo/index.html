@@ -93,6 +93,12 @@
             
                 <li class="toctree-l3"><a href="#step-2-install-mosquitto-broker-on-raspberry-pi">* Step 2: Install Mosquitto broker on Raspberry Pi</a></li>
                 
+                    <li><a class="toctree-l4" href="#stop-the-server">Stop the Server</a></li>
+                
+                    <li><a class="toctree-l4" href="#configuring-and-starting-the-mosquitto-server">Configuring and Starting the Mosquitto Server</a></li>
+                
+                    <li><a class="toctree-l4" href="#starting-the-server">Starting the Server</a></li>
+                
                     <li><a class="toctree-l4" href="#test-mosquitto-broker">* Test mosquitto broker</a></li>
                 
                     <li><a class="toctree-l4" href="#result">Result:</a></li>
@@ -201,6 +207,36 @@
 <p><code>apt-cache search mosquitto</code></p>
 <p>Or just install mosquitto broker and clients tool:</p>
 <p><code>sudo apt-get install mosquitto mosquitto-clients python-mosquitto</code></p>
+<h3 id="stop-the-server">Stop the Server</h3>
+<p><code>sudo /etc/init.d/mosquitto stop</code></p>
+<h3 id="configuring-and-starting-the-mosquitto-server">Configuring and Starting the Mosquitto Server</h3>
+<p><code>sudo nano /etc/mosquitto/mosquitto.conf</code></p>
+<p>The File Should Look as follows</p>
+<pre><code># Place your local configuration in /etc/mosquitto/conf.d/
+#
+# A full description of the configuration file is at
+# /usr/share/doc/mosquitto/examples/mosquitto.conf.example
+
+pid_file /var/run/mosquitto.pid
+
+persistence true
+persistence_location /var/lib/mosquitto/
+
+log_dest topic
+
+log_type error
+log_type warning
+log_type notice
+log_type information
+
+connection_messages true
+log_timestamp true
+
+include_dir /etc/mosquitto/conf.d
+</code></pre>
+
+<h3 id="starting-the-server">Starting the Server</h3>
+<p><code>sudo /etc/init.d/mosquitto start</code></p>
 <p>For more information, please follow this link: <a href="http://mosquitto.org/2013/01/mosquitto-debian-repository/">http://mosquitto.org/2013/01/mosquitto-debian-repository/</a></p>
 <h3 id="test-mosquitto-broker">* Test mosquitto broker</h3>
 <p>Open up two more terminal windows.</p>

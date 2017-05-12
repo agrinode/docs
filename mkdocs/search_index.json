@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Welcome to Agrinode Project\n\n\nHomepage: \nhttps://agrinode.github.io\n\n\nBlog: \nhttps://agrinode.blogspot.com\n\n\nBuilding Wireless Sensor Network for Agriculture Applications\n\n\nWe - the AgriNode team are proud to receive the Special Acknowledgement from the judging panel.\n\n\nhttps://www.eclipse.org/org/press-release/openiotchallenge3_winners.php\n\n\nThanks to the EclipseIoT and the sponsors for organizing the Open IoT Challenge where we have learned about Open-source IoT platforms and made new friends in the IoT world.\n\n\nWe are participant in \nOpenIoTChallenge 3.0\n\n\n\n\nAny comments, suggestions are welcome.\n\n\nFeel free to share your ideas in our blog: \nAgrinode Blogspot", 
+            "text": "function googleTranslateElementInit() {\n            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');\n            }\n            \n\n\n\n\n\n\nWelcome to Agrinode Project\n\n\nHomepage: \nhttps://agrinode.github.io\n\n\nBlog: \nhttps://agrinode.blogspot.com\n\n\nBuilding Wireless Sensor Network for Agriculture Applications\n\n\nWe - the AgriNode team are proud to receive the Special Acknowledgement from the judging panel.\n\n\nhttps://www.eclipse.org/org/press-release/openiotchallenge3_winners.php\n\n\nThanks to the EclipseIoT and the sponsors for organizing the Open IoT Challenge where we have learned about Open-source IoT platforms and made new friends in the IoT world.\n\n\nWe are participant in \nOpenIoTChallenge 3.0\n\n\n\n\nAny comments, suggestions are welcome.\n\n\nFeel free to share your ideas in our blog: \nAgrinode Blogspot", 
             "title": "Home"
         }, 
         {

@@ -187,11 +187,11 @@ For more information about Windows IoT Core, please visit the official site (htt
 <h3 id="get-started">Get started</h3>
 <h3 id="1-download-os-for-raspberry-pi">1. Download OS for Raspberry Pi</h3>
 <p>Firstly, we need to download Windows 10 IoT core package for Raspberry Pi 2 on the official website:
-https://developer.microsoft.com/en-us/windows/iot/Downloads
+<img alt="https://developer.microsoft.com/en-us/windows/iot/Downloads" src="https://developer.microsoft.com/en-us/windows/iot/Downloads" />
 After downloading the package, we then Install Windows IoT Core For Raspberry Pi on your PC.
 Double-click on the file downloaded and install Windows 10 IoT Core for Raspberry Pi.</p>
 <p><img alt="" src="https://3.bp.blogspot.com/-CR5xkf9i-Jw/WTkMoqO-DiI/AAAAAAAAADc/A8CUhJWIPmElXzpBepcQae60yj3D7FxGwCLcB/s1600/Installing%2BWindows%2B10%2BIoT%2BCore%2Bfor%2BRaspberry%2BPi.png" /></p>
-<p>After installing, the flash file will be saved in your C drive (C:\Program Files (x86)\Microsoft IoT\FFU\RaspberryPi2\flash.ffu)</p>
+<p>After installing, the flash file will be saved in your C drive <code>(C:\Program Files (x86)\Microsoft IoT\FFU\RaspberryPi2\flash.ffu)</code></p>
 <h3 id="2-download-and-install-windows-adk">2. Download and install Windows ADK</h3>
 <p><a href="https://developer.microsoft.com/en-us/windows/hardware/windows-assessment-deployment-kit">https://developer.microsoft.com/en-us/windows/hardware/windows-assessment-deployment-kit</a>
 Pleck check on “Imaging and Configuration Designer (ICD)”
@@ -201,11 +201,11 @@ To create and apply FFU images for Windows 10, Version 1607 and earlier, you can
 <p><code>diskpart</code></p>
 <p><code>list disk</code></p>
 <p><code>exit</code></p>
-<p>At this point. Copy flash.ffu file to <code>C:/.</code> Then execute the command:</p>
+<p>At this point. Copy flash.ffu file to <code>C:/</code> Then execute the command:</p>
 <p><code>DISM /Apply-Image /ImageFile:C:\flash.ffu /ApplyDrive:\\.\PhysicalDrive1 /SkipPlatformCheck</code></p>
-<p>For more information about <code>/SkipPlatformCheck</code>, see Apply-Image in DISM image management command-line options
-<img alt="https://3.bp.blogspot.com/-Igs5mjag2qk/WTkMs0Cb1iI/AAAAAAAAADk/vJMTQ3l3eYUumJVAE8uR0eaV0EC65gALwCLcB/s320/dism.png" src="https://3.bp.blogspot.com/-Igs5mjag2qk/WTkMs0Cb1iI/AAAAAAAAADk/vJMTQ3l3eYUumJVAE8uR0eaV0EC65gALwCLcB/s320/dism.png" /></p>
-<p>Now the Windows IoT is ready to use. Remove the SD card from PC and plug it into Raspberry Pi 2. Connect internet cable and power the board. Raspberry Pi will boot into Windows IoT OS.</p>
+<p>For more information about <code>/SkipPlatformCheck</code>, see Apply-Image in DISM image management command-line options</p>
+<p><img alt="https://3.bp.blogspot.com/-Igs5mjag2qk/WTkMs0Cb1iI/AAAAAAAAADk/vJMTQ3l3eYUumJVAE8uR0eaV0EC65gALwCLcB/s320/dism.png" src="https://3.bp.blogspot.com/-Igs5mjag2qk/WTkMs0Cb1iI/AAAAAAAAADk/vJMTQ3l3eYUumJVAE8uR0eaV0EC65gALwCLcB/s320/dism.png" /></p>
+<p>Now the Windows IoT is ready to use. Remove the SD card from PC and plug it into Raspberry Pi 2. Connect internet cable and power the board. Raspberry Pi will boot into Windows 10 IoT OS.</p>
               
             </div>
           </div>

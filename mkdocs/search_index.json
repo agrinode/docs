@@ -294,6 +294,36 @@
             "location": "/openhab2_mqtt/#show-log-file", 
             "text": "Open terminal, then run:  tail -f /var/log/openhab2/openhab.log", 
             "title": "Show log file"
+        }, 
+        {
+            "location": "/install_windows_iot_core/", 
+            "text": "Installing Windows 10 IoT Core for Raspberry Pi\n\n\nIn this post I will be going to process of how to install Windows 10 IoT core for Raspberry Pi 2.\nFor more information about Windows IoT Core, please visit the official site (https://developer.microsoft.com/en-us/windows/iot/docs). Windows IoT core is the operating system built for Internet of Things.\n\n\nRequirement:\n\n\n\n\nWindows 10 PC\n\n\nSD Card\n\n\nRaspberry Pi 2\n\n\n\n\nGet started\n\n\n1. Download OS for Raspberry Pi\n\n\nFirstly, we need to download Windows 10 IoT core package for Raspberry Pi 2 on the official website:\nhttps://developer.microsoft.com/en-us/windows/iot/Downloads\nAfter downloading the package, we then Install Windows IoT Core For Raspberry Pi on your PC.\nDouble-click on the file downloaded and install Windows 10 IoT Core for Raspberry Pi.\n\n\n\n\nAfter installing, the flash file will be saved in your C drive (C:\\Program Files (x86)\\Microsoft IoT\\FFU\\RaspberryPi2\\flash.ffu)\n\n\n2. Download and install Windows ADK\n\n\nhttps://developer.microsoft.com/en-us/windows/hardware/windows-assessment-deployment-kit\n\nPleck check on \u201cImaging and Configuration Designer (ICD)\u201d\nTo create and apply FFU images for Windows 10, Version 1607 and earlier, you can use Windows Imaging and Configuration Designer (ICD) which is included in the Windows Assessment and Deployment Kit (ADK) for Windows 10, Version 1607. You can use the Windows 10 version of DISM, which is included in the Windows 10 version of Windows Preinstallation Environment (WinPE)to apply FFU images\n\n\nApply the image to a drive. For a physical drive X:, the string should be the following form: \n\\\\.\\PhysicalDriveX\n, where \nX\n is the disk number that diskpart provides, such as \n\\\\.\\PhysicalDrive1.\n Hard disk numbers start at zero. For more information about \nPhysicalDriveX\n, see CreateFile function.\n\n\nTo check PhycicalDriverX, open CMD\n\n\ndiskpart\n\n\nlist disk\n\n\nexit\n\n\nAt this point. Copy flash.ffu file to \nC:/.\n Then execute the command:\n\n\nDISM /Apply-Image /ImageFile:C:\\flash.ffu /ApplyDrive:\\\\.\\PhysicalDrive1 /SkipPlatformCheck\n\n\nFor more information about \n/SkipPlatformCheck\n, see Apply-Image in DISM image management command-line options\n\n\n\nNow the Windows IoT is ready to use. Remove the SD card from PC and plug it into Raspberry Pi 2. Connect internet cable and power the board. Raspberry Pi will boot into Windows IoT OS.", 
+            "title": "Install Window IoT Core on Raspberry Pi 2"
+        }, 
+        {
+            "location": "/install_windows_iot_core/#installing-windows-10-iot-core-for-raspberry-pi", 
+            "text": "In this post I will be going to process of how to install Windows 10 IoT core for Raspberry Pi 2.\nFor more information about Windows IoT Core, please visit the official site (https://developer.microsoft.com/en-us/windows/iot/docs). Windows IoT core is the operating system built for Internet of Things.", 
+            "title": "Installing Windows 10 IoT Core for Raspberry Pi"
+        }, 
+        {
+            "location": "/install_windows_iot_core/#requirement", 
+            "text": "Windows 10 PC  SD Card  Raspberry Pi 2", 
+            "title": "Requirement:"
+        }, 
+        {
+            "location": "/install_windows_iot_core/#get-started", 
+            "text": "", 
+            "title": "Get started"
+        }, 
+        {
+            "location": "/install_windows_iot_core/#1-download-os-for-raspberry-pi", 
+            "text": "Firstly, we need to download Windows 10 IoT core package for Raspberry Pi 2 on the official website:\nhttps://developer.microsoft.com/en-us/windows/iot/Downloads\nAfter downloading the package, we then Install Windows IoT Core For Raspberry Pi on your PC.\nDouble-click on the file downloaded and install Windows 10 IoT Core for Raspberry Pi.   After installing, the flash file will be saved in your C drive (C:\\Program Files (x86)\\Microsoft IoT\\FFU\\RaspberryPi2\\flash.ffu)", 
+            "title": "1. Download OS for Raspberry Pi"
+        }, 
+        {
+            "location": "/install_windows_iot_core/#2-download-and-install-windows-adk", 
+            "text": "https://developer.microsoft.com/en-us/windows/hardware/windows-assessment-deployment-kit \nPleck check on \u201cImaging and Configuration Designer (ICD)\u201d\nTo create and apply FFU images for Windows 10, Version 1607 and earlier, you can use Windows Imaging and Configuration Designer (ICD) which is included in the Windows Assessment and Deployment Kit (ADK) for Windows 10, Version 1607. You can use the Windows 10 version of DISM, which is included in the Windows 10 version of Windows Preinstallation Environment (WinPE)to apply FFU images  Apply the image to a drive. For a physical drive X:, the string should be the following form:  \\\\.\\PhysicalDriveX , where  X  is the disk number that diskpart provides, such as  \\\\.\\PhysicalDrive1.  Hard disk numbers start at zero. For more information about  PhysicalDriveX , see CreateFile function.  To check PhycicalDriverX, open CMD  diskpart  list disk  exit  At this point. Copy flash.ffu file to  C:/.  Then execute the command:  DISM /Apply-Image /ImageFile:C:\\flash.ffu /ApplyDrive:\\\\.\\PhysicalDrive1 /SkipPlatformCheck  For more information about  /SkipPlatformCheck , see Apply-Image in DISM image management command-line options  Now the Windows IoT is ready to use. Remove the SD card from PC and plug it into Raspberry Pi 2. Connect internet cable and power the board. Raspberry Pi will boot into Windows IoT OS.", 
+            "title": "2. Download and install Windows ADK"
         }
     ]
 }

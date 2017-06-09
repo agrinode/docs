@@ -229,8 +229,10 @@ $ sudo apt-get upgrade
 <ul>
 <li>Install requirements</li>
 </ul>
-<p><code>$ sudo apt-get install git make gcc g++ python3-ply ncurses-dev \
-      python3-yaml python2.7 dfu-util</code> </p>
+<pre><code>$ sudo apt-get install git make gcc g++ python3-ply ncurses-dev \
+      python3-yaml python2.7 dfu-util 
+</code></pre>
+
 <ul>
 <li>
 <p>Install the Zephyr SDK</p>
@@ -239,8 +241,10 @@ $ sudo apt-get upgrade
 <p>Download the latest SDK self-extractable binary.</p>
 </li>
 </ul>
-<p><code>$ wget https://github.com/zephyrproject-rtos/meta-zephyr-sdk/releases/download/0.9.1/zephyr-sdk-0.9.1-setup.run</code>
-  * Run the installation binary</p>
+<p><code>$ wget https://github.com/zephyrproject-rtos/meta-zephyr-sdk/releases/download/0.9.1/zephyr-sdk-0.9.1-setup.run</code></p>
+<ul>
+<li>Run the installation binary</li>
+</ul>
 <pre><code>$ chmod +x zephyr-sdk-0.9.1-setup.run
 $ ./zephyr-sdk-0.9.1-setup.run
 </code></pre>
@@ -263,8 +267,7 @@ $ cd samples/hello_world
 $ make BOARD=arduino_due
 </code></pre>
 
-<p>After building an application successfully, the results can be found in the
-<code>samples/hello_world/outdir/arduino_due</code></p>
+<p>After building an application successfully, the results can be found in the <code>samples/hello_world/outdir/arduino_due</code> directory</p>
 <h3 id="4-flashing-the-zephyr-kernel-onto-arduino-due">4. Flashing the Zephyr kernel onto Arduino Due</h3>
 <p>Flashing the Zephyr kernel onto Arduino Due requires the bossa tool.
 Install BOSSA tool</p>
@@ -275,8 +278,8 @@ Press the Erase button for more than 220 ms.
 Press the Reset button so the board will boot into the SAM-BA bootloader.</p>
 <p><code>$ bossac -p ttyACM0 -e -w -v -b outdir/arduino_due/zephyr.bin</code></p>
 <h3 id="5-check-for-the-output">5. Check for the output</h3>
-<p><code>$ minicom -D /dev/ttyACM0</code>
-Press the Reset button and you should see <code>“Hello World!”</code> in your terminal.</p>
+<p><code>$ minicom -D /dev/ttyACM0</code></p>
+<p>Press the Reset button and you should see <code>“Hello World!”</code> in your terminal.</p>
 <p><img alt="" src="https://3.bp.blogspot.com/-sdfpFOGi7tU/WS5cdeDYJWI/AAAAAAAAJvs/e_TMiaIYnY0yluF5D6J5oecopdAURbTngCLcB/s400/Screenshot%2Bfrom%2B2017-05-31%2B13-01-38.png" /></p>
               
             </div>

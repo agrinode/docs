@@ -26,11 +26,19 @@
     
 
     
+        
     <url>
      <loc>/install_nodered_orangepi/</loc>
      <lastmod>2017-06-09</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    <url>
+     <loc>/nodered_tutorial/</loc>
+     <lastmod>2017-06-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
@@ -50,27 +58,29 @@
     
 
     
-    <url>
-     <loc>/nodered_tutorial/</loc>
-     <lastmod>2017-06-09</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
+        
     <url>
      <loc>/openhab2_weather_demo/</loc>
      <lastmod>2017-06-09</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
+        
     <url>
      <loc>/openhab2_mqtt/</loc>
      <lastmod>2017-06-09</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/install_zephyr_os_on_arduino_due/</loc>
+     <lastmod>2017-06-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     

@@ -174,6 +174,21 @@
     </ul>
 <li>
           
+            <li>
+    <ul class="subnav">
+    <li><span>Flask</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Install_python_flask_on_ibm_bluemix/">Install Python Flask on IBM Bluemix</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
         </ul>
       </div>
       &nbsp;
@@ -253,14 +268,14 @@ $ ./zephyr-sdk-0.9.1-setup.run
 <li>To use the Zephyr SDK, export the following environment variables and use the target location where SDK was installed, type:</li>
 </ul>
 <pre><code>$ export ZEPHYR_GCC_VARIANT=zephyr
-$ export ZEPHYR_SDK_INSTALL_DIR=/opt/zephyr-sdk/
+$ export ZEPHYR_SDK_INSTALL_DIR=/opt/zephyr-sdk
 </code></pre>
 
 <h3 id="2-download-zephyr-project">2. Download Zephyr project</h3>
 <p><code>$ git clone https://github.com/zephyrproject-rtos/zephyr.git</code></p>
 <h3 id="3-building-a-hello_world-application">3. Building a Hello_World Application</h3>
 <pre><code>$ export ZEPHYR_GCC_VARIANT=zephyr
-$ export ZEPHYR_SDK_INSTALL_DIR=/opt/zephyr-sdk/
+$ export ZEPHYR_SDK_INSTALL_DIR=/opt/zephyr-sdk
 $ cd zephyr 
 $ source zephyr-env.sh
 $ cd samples/hello_world
@@ -277,6 +292,10 @@ Install BOSSA tool</p>
 Press the Erase button for more than 220 ms.
 Press the Reset button so the board will boot into the SAM-BA bootloader.</p>
 <p><code>$ bossac -p ttyACM0 -e -w -v -b outdir/arduino_due/zephyr.bin</code></p>
+<ul>
+<li>If you are unable to upload to Arduino board, please change permission on serial port. Type the following command: </li>
+</ul>
+<p><code>chmod a+rw /ttyACM0</code></p>
 <h3 id="5-check-for-the-output">5. Check for the output</h3>
 <p><code>$ minicom -D /dev/ttyACM0</code></p>
 <p>Press the Reset button and you should see <code>“Hello World!”</code> in your terminal.</p>

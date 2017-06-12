@@ -3,10 +3,24 @@ pages:
 - Home: index.md
 - System Architecture: system_architech.md
 - Install Kura on Orange Pi: orangepi.md
-- Install Node-RED on Orange Pi: install_nodered_orangepi.md
+- Node RED:
+  - Install Node-RED on Orange Pi: install_nodered_orangepi.md
+  - Node Red tutorial: nodered_tutorial.md
+
 - MQTT demo: mqtt_demo.md
 - Bitreactive tutorial: Bitreactive_tutorial.md
-- Node Red tutorial: nodered_tutorial.md
-- OpenHAB: openhab2_weather_demo.md
 
+- OpenHAB:
+  - OpenHAB2 yahoo weather binding: openhab2_weather_demo.md
+  - OpenHAB2 MQTT binding: openhab2_mqtt.md
+
+- Zephyr Project ( RTOS ):
+  - Hello World on Arduino Due: install_zephyr_os_on_arduino_due.md
+
+- Windows IoT Core:
+  - Install Window 10 IoT Core on Raspberry Pi 2: install_windows_iot_core.md
+  
+- Flask:
+  - Install Python Flask on IBM Bluemix: Install_python_flask_on_ibm_bluemix.md
+  
 theme: readthedocs

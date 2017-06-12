@@ -58,6 +58,45 @@ Or just install mosquitto broker and clients tool:
 
  `sudo apt-get install mosquitto mosquitto-clients python-mosquitto`
 
+### Stop the Server
+
+`sudo /etc/init.d/mosquitto stop`
+
+### Configuring and Starting the Mosquitto Server
+
+`sudo nano /etc/mosquitto/mosquitto.conf`
+
+The File Should Look as follows
+
+```
+# Place your local configuration in /etc/mosquitto/conf.d/
+#
+# A full description of the configuration file is at
+# /usr/share/doc/mosquitto/examples/mosquitto.conf.example
+
+pid_file /var/run/mosquitto.pid
+
+persistence true
+persistence_location /var/lib/mosquitto/
+
+log_dest topic
+
+log_type error
+log_type warning
+log_type notice
+log_type information
+
+connection_messages true
+log_timestamp true
+
+include_dir /etc/mosquitto/conf.d
+```
+
+### Starting the Server
+
+`sudo /etc/init.d/mosquitto start`
+
+
 For more information, please follow this link: [http://mosquitto.org/2013/01/mosquitto-debian-repository/](http://mosquitto.org/2013/01/mosquitto-debian-repository/)
 
 ### * Test mosquitto broker

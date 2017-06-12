@@ -232,17 +232,19 @@
 </ul>
 <h3 id="2-clone-example-code-and-run-locally">2. Clone example code and run locally</h3>
 <ul>
-<li>Rename your app
-  Open up <code>manifest.yml</code>, similar like:</li>
+<li>Rename your app</li>
 </ul>
-<p>```
-    applications:
+<p>Open up <code>manifest.yml</code>, similar like:</p>
+<pre><code>    applications:
         - name: Lecheebot
         random-route: true
-        memory: 128M</p>
-<p><code>``
-- Run your app locally
-  Ensure that you have installed</code>pip` in your PC. If not, follow this post: <a href="http://flask.pocoo.org/docs/0.12/installation/#windows-easy-install">pip and setuptool on windows</a></p>
+        memory: 128M
+</code></pre>
+
+<ul>
+<li>Run your app locally
+  Ensure that you have installed <code>pip</code> in your PC. If not, follow this post: <a href="http://flask.pocoo.org/docs/0.12/installation/#windows-easy-install">pip and setuptool on windows</a></li>
+</ul>
 <p>now, you can run your app locally by typing the command:</p>
 <p><code>pip install -r requirements.txt</code></p>
 <p><code>python hello.py</code></p>
@@ -305,7 +307,7 @@ Execute the command to deploy your app:</p>
 </code></pre>
 
 <p>You can find username, password, host by click on Cloudant NoSQL DB service at your IBM Blumix console. Then click on "Service Credentials". Copy and pass information to your <code>vcap-local.json</code> file.</p>
-<p><img alt="" src="https://github.com/agrinode/docs/blob/master/img/cloudant_credential.png" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/agrinode/docs/master/img/cloudant_credential.png" /></p>
 <p>Now you can test your app locally with the database:</p>
 <p><code>python hello.py</code></p>
               

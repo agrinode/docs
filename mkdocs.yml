@@ -3,6 +3,8 @@ pages:
 - Home: index.md
 - System Architecture: system_architech.md
 - Install Kura on Orange Pi: orangepi.md
+- CLI:
+  - Date and Time setting on Debian: set_up_date_and_time.md
 - Node RED:
   - Install Node-RED on Orange Pi: install_nodered_orangepi.md
   - Node Red tutorial: nodered_tutorial.md

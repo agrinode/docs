@@ -1,8 +1,8 @@
-## Get stated with Python [Flask](http://flask.pocoo.org/) Frame work on IBM Bluemix
+## Get stated with Python [Flask](http://flask.pocoo.org/) Framework on IBM Bluemix
 
 This work is based on [Getting started with Python on Bluemix Tutorial](https://github.com/IBM-Bluemix/get-started-python)
 
-The tutorial will develop a Python web application based on Flask framwork and deploy the app on [IBM Bluemix](http://bluemix.net). The app shows up a basic form which users can type their names. When hit enter the name will be add to database and can be access at `http://base_url/api/visitors`  
+The tutorial will develop a Python web application based on Flask framwork and deploy the app on [IBM Bluemix](http://bluemix.net). The app shows up a basic form which users can type their names. When hit enter the name will be added to database and can be accessed at `http://base_url/api/visitors`  
 
 ### 1. Requirement
 
@@ -11,16 +11,24 @@ The tutorial will develop a Python web application based on Flask framwork and d
 - [Python](https://www.python.org/downloads/)
 
 ### 2. Clone example code and run locally
+
+```
+git clone https://github.com/IBM-Bluemix/get-started-python
+cd get-started-python
+
+```
+
 - Rename your app
+
   Open up `manifest.yml`, similar like:
   
-  ```
+```
     applications:
         - name: Lecheebot
         random-route: true
         memory: 128M
+```
 
-  ```
 - Run your app locally
   Ensure that you have installed `pip` in your PC. If not, follow this post: [pip and setuptool on windows](http://flask.pocoo.org/docs/0.12/installation/#windows-easy-install)
 
@@ -65,7 +73,7 @@ You can view your app status by the command:
 - Navigate to your app. Click on "Connect new" button on Connections Group. Choose Cloudant NoSQL DB service on the categories. Finally click Create button.
 - Ensure that you connect Cloudant NoSQL DB service to your application. If not, click on the "Connect existing" to connect with service.
 
-You can test your app at your app url.
+Now, You can test your app at your app url.
 
 * To connect Database for working locally:
 
@@ -94,7 +102,7 @@ You can test your app at your app url.
 
 You can find username, password, host by click on Cloudant NoSQL DB service at your IBM Blumix console. Then click on "Service Credentials". Copy and pass information to your `vcap-local.json` file.
 
-![](/img/cloudant_credential.png)
+![](https://raw.githubusercontent.com/agrinode/docs/master/img/cloudant_credential.png)
 
 Now you can test your app locally with the database:
 

@@ -166,7 +166,15 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#get-stated-with-python-flask-frame-work-on-ibm-bluemix">Get stated with Python Flask Frame work on IBM Bluemix</a></li>
+                <li class="toctree-l3"><a href="#get-stated-with-python-flask-framework-on-ibm-bluemix">Get stated with Python Flask Framework on IBM Bluemix</a></li>
+                
+                    <li><a class="toctree-l4" href="#1-requirement">1. Requirement</a></li>
+                
+                    <li><a class="toctree-l4" href="#2-clone-example-code-and-run-locally">2. Clone example code and run locally</a></li>
+                
+                    <li><a class="toctree-l4" href="#3-deploy-to-ibm-bluemix-using-cloud-foudry-cli">3. Deploy to IBM Bluemix using Cloud Foudry CLI</a></li>
+                
+                    <li><a class="toctree-l4" href="#4-add-database">4. Add Database</a></li>
                 
             
             </ul>
@@ -213,42 +221,40 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="get-stated-with-python-flask-frame-work-on-ibm-bluemix">Get stated with Python <a href="http://flask.pocoo.org/">Flask</a> Frame work on IBM Bluemix</h2>
+                <h2 id="get-stated-with-python-flask-framework-on-ibm-bluemix">Get stated with Python <a href="http://flask.pocoo.org/">Flask</a> Framework on IBM Bluemix</h2>
 <p>This work is based on <a href="https://github.com/IBM-Bluemix/get-started-python">Getting started with Python on Bluemix Tutorial</a></p>
-<ol>
-<li>
-<p>Requirement</p>
-</li>
-<li>
-<p><a href="https://git-scm.com/downloads">Git</a></p>
-</li>
+<p>The tutorial will develop a Python web application based on Flask framwork and deploy the app on <a href="http://bluemix.net">IBM Bluemix</a>. The app shows up a basic form which users can type their names. When hit enter the name will be added to database and can be accessed at <code>http://base_url/api/visitors</code>  </p>
+<h3 id="1-requirement">1. Requirement</h3>
+<ul>
+<li><a href="https://git-scm.com/downloads">Git</a></li>
 <li><a href="https://console.ng.bluemix.net/docs/starters/install_cli.html">Cf</a></li>
-<li>
-<p><a href="https://www.python.org/downloads/">Python</a></p>
-</li>
-<li>
-<p>Clone example code and run locally</p>
-</li>
-<li>Rename your app
-  Open up <code>manifest.yml</code>, similar like:</li>
-</ol>
-<p>```</p>
-<hr />
-<pre><code>applications:
-    - name: Lecheebot
-    random-route: true
-    memory: 128M
+<li><a href="https://www.python.org/downloads/">Python</a></li>
+</ul>
+<h3 id="2-clone-example-code-and-run-locally">2. Clone example code and run locally</h3>
+<pre><code>git clone https://github.com/IBM-Bluemix/get-started-python
+cd get-started-python
+
 </code></pre>
-<p><code>``
-- Run your app locally
-  Ensure that you have installed</code>pip` in your PC. If not, follow this post: <a href="http://flask.pocoo.org/docs/0.12/installation/#windows-easy-install">pip and setuptool on windows</a></p>
+
+<ul>
+<li>Rename your app</li>
+</ul>
+<p>Open up <code>manifest.yml</code>, similar like:</p>
+<pre><code>    applications:
+        - name: Lecheebot
+        random-route: true
+        memory: 128M
+</code></pre>
+
+<ul>
+<li>Run your app locally
+  Ensure that you have installed <code>pip</code> in your PC. If not, follow this post: <a href="http://flask.pocoo.org/docs/0.12/installation/#windows-easy-install">pip and setuptool on windows</a></li>
+</ul>
 <p>now, you can run your app locally by typing the command:</p>
 <p><code>pip install -r requirements.txt</code></p>
 <p><code>python hello.py</code></p>
 <p>Your app is now accessible at: <a href="http://locallhost:8080">http://localhost:8080</a></p>
-<ol>
-<li>Deploy to IBM Bluemix using Cloud Foudry CLI</li>
-</ol>
+<h3 id="3-deploy-to-ibm-bluemix-using-cloud-foudry-cli">3. Deploy to IBM Bluemix using Cloud Foudry CLI</h3>
 <p>Ensure you have <a href="http://bluemix.net">IBM Bluemix</a> accout and installed CF CLI on your machine. if not, follow the steps: [<a href="https://github.com/cloudfoundry/cli#downloads">https://github.com/cloudfoundry/cli#downloads</a></p>
 <ul>
 <li>Log in to CF CLI</li>
@@ -265,10 +271,8 @@ Execute the command to deploy your app:</p>
 <p><code>cf push</code></p>
 <p>You can view your app status by the command:</p>
 <p><code>cf apps</code></p>
-<ol>
-<li>
-<p>Add Database</p>
-</li>
+<h3 id="4-add-database">4. Add Database</h3>
+<ul>
 <li>
 <p>To connect to Cloudant noSQL DB, follow these steps:</p>
 </li>
@@ -277,8 +281,8 @@ Execute the command to deploy your app:</p>
 </li>
 <li>Navigate to your app. Click on "Connect new" button on Connections Group. Choose Cloudant NoSQL DB service on the categories. Finally click Create button.</li>
 <li>Ensure that you connect Cloudant NoSQL DB service to your application. If not, click on the "Connect existing" to connect with service.</li>
-</ol>
-<p>You can test your app at your app url.</p>
+</ul>
+<p>Now, You can test your app at your app url.</p>
 <ul>
 <li>
 <p>To connect Database for working locally:</p>
@@ -308,7 +312,7 @@ Execute the command to deploy your app:</p>
 </code></pre>
 
 <p>You can find username, password, host by click on Cloudant NoSQL DB service at your IBM Blumix console. Then click on "Service Credentials". Copy and pass information to your <code>vcap-local.json</code> file.</p>
-<p><img alt="" src="../img/cloudant_credential.png" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/agrinode/docs/master/img/cloudant_credential.png" /></p>
 <p>Now you can test your app locally with the database:</p>
 <p><code>python hello.py</code></p>
               
